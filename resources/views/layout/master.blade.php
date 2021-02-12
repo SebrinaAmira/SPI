@@ -28,20 +28,14 @@
 <body>
 
 	<!-- Navbar Header -->
-	@extends('layout.navbar')
+	
 	<!-- End Navbar -->
 
     <div class="wrapper">
-        <div class="main-header">
-
-            <!-- Logo Header -->
-            @extends('layout.header')
-            <!-- End Logo Header -->
-    
-        </div>
+		@include('layout.navbar')   
     
         <!-- Sidebar -->
-        @extends('layout.sidebar')
+        @include('layout.sidebar')
         <!-- End Sidebar -->
     
         <div class="main-panel">
@@ -73,11 +67,11 @@
                 </div>
             </div>
         </div>
-    
+		@include('layout.footer')
     </div>
 
-    @extends('layout.footer')
-	@extends('layout.script')
+    
+	@include('layout.script')
 </body>
 
 </html>
