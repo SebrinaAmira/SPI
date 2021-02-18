@@ -1,5 +1,7 @@
 @extends('layout.master')
 
+@section('title', 'Edit Data')
+
 @section('content')
 
 <form action="/galeri/update/{{$galeri->id}} " method="POST" enctype="multipart/form-data">

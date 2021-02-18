@@ -1,5 +1,7 @@
 @extends('layout.master')
 
+@section('title', 'Data')
+
 @section('content')
     <div class="card mt-5">
         <div class="card-header mt-3">
@@ -37,7 +39,7 @@
                             <td>{{ $pf->created_by}}</td>
                             <td>{{ $pf->updated_by}}</td>
                             <td>
-                                <a href="{{ url('/profil/'.$pf->id.'/edit')}}"><button type="button" class="btn btn-info btn-sm inline">Edit</button></a>
+                                <a href="{{ url('/profil/'.$pf->id.'/edit')}}"><button type="button" class="btn btn-warning btn-sm inline">Edit</button></a>
                                 <form class="d-inline" action="{{ url('/profil/'.$pf->id)}}" method="post">
                                     @csrf 
                                     @method('delete')

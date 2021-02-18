@@ -1,5 +1,7 @@
 @extends('layout.master')
 
+@section('title', 'Create Data')
+
 @section('content')
 
 <form action="/galeri/insert" method="POST" enctype="multipart/form-data">

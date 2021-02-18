@@ -1,5 +1,5 @@
-    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../../assets/css/atlantis.min.css">
+	<link rel="stylesheet" href="{{ url('/')}}/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ url('/')}}/assets/css/atlantis.min.css">
 	<link href="{{ url('/')}}/assets/styles.css" rel="stylesheet" />
 	<link href="{{ url('/')}}/assets/prism.css" rel="stylesheet" />
 

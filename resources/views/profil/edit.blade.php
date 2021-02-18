@@ -1,5 +1,7 @@
 @extends('layout.master')
 
+@section('title', 'Edit Data')
+
 @section('content')
     <div class="container">
         <div class="card mt-5">
