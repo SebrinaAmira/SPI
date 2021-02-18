@@ -40,7 +40,8 @@
     
         <div class="main-panel">
             <div class="content">
-                <div class="page-inner">
+                @yield('content')
+                {{-- <div class="page-inner">
                     <div class="page-header">
                         <h4 class="page-title">Dashboard</h4>
                         <ul class="breadcrumbs">
@@ -64,10 +65,9 @@
                         </ul>
                     </div>
                     <div class="page-category">Inner page content goes here</div>
-                </div>
+                </div> --}}
             </div>
         </div>
-		@include('layout.footer')
     </div>
 
     

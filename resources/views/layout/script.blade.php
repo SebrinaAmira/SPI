@@ -35,3 +35,4 @@
 
 <!-- Atlantis JS -->
 <script src="{{url('/')}}/assets/js/atlantis.min.js"></script>
+
