@@ -24,22 +24,22 @@
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="{{ url('/')}}/assets/css/demo.css">
+
 </head>
 <body>
 
-	<!-- Navbar Header -->
-	
-	<!-- End Navbar -->
-
     <div class="wrapper">
-		@include('layout.navbar')   
+		<!-- Navbar Header -->
+        @include('layout.navbar')   
+	    <!-- End Navbar -->
     
         <!-- Sidebar -->
         @include('layout.sidebar')
         <!-- End Sidebar -->
-    
+
         <div class="main-panel">
-            <div class="content">
+            @yield('content')
+            {{-- <div class="content">
                 <div class="page-inner">
                     <div class="page-header">
                         <h4 class="page-title">Dashboard</h4>
@@ -65,9 +65,8 @@
                     </div>
                     <div class="page-category">Inner page content goes here</div>
                 </div>
-            </div>
+            </div> --}}
         </div>
-		@include('layout.footer')
     </div>
 
     

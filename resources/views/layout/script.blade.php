@@ -1,3 +1,8 @@
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../assets/css/atlantis.min.css">
+	<link href="{{ url('/')}}/assets/styles.css" rel="stylesheet" />
+	<link href="{{ url('/')}}/assets/prism.css" rel="stylesheet" />
+
 <!--   Core JS Files   -->
 <script src="{{url('/')}}/assets/js/core/jquery.3.2.1.min.js"></script>
 <script src="{{url('/')}}/assets/js/core/popper.min.js"></script>
