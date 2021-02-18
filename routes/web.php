@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GaleriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProfilController;
@@ -18,11 +19,12 @@ use App\Http\Controllers\ProfilController;
 Route::get('/', function () {
     return view('layout.master');
 });
-
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
+});
 Route::get('/profil', function () {
     return view('profil.index');
 });
-
 Route::get('/profil/create', function () {
     return view('profil.create');
 });
@@ -32,3 +34,11 @@ Route::resource('profil', ProfilController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('galeri', [GaleriController::class, 'index'])->name('galeri');
+Route::get('galeri/create', [GaleriController::class, 'add']);
+Route::post('galeri/update/{id}', [GaleriController::class, 'update']);
+Route::get('galeri/edit/{id}',  [GaleriController::class, 'edit']);
+Route::post('galeri/insert', [GaleriController::class, 'insert']);
+Route::get('galeri/delete/{id}', [GaleriController::class, 'delete']);

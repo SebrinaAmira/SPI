@@ -9,7 +9,7 @@
                     <div class="info">
                         <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                             <span>
-                                Hizrian
+                                SPI
                                 <span class="user-level">Administrator</span>
                                 <span class="caret"></span>
                             </span>
@@ -41,16 +41,54 @@
                     <li class="nav-item active">
                         <a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
                             <i class="fas fa-home"></i>
-                            <p>Dashboard</p>
-                            <span class="caret"></span>
+								<p>Dashboard</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="dashboard">
+								<ul class="nav nav-collapse">
+									<li>
+										<a href="/dashboard">
+											<span class="sub-item">Dashboard</span>
+										</a>
+									</li>
+                                </ul>
                         </a>
                     </li>
+                    <li class="nav-section">
+                        <span class="sidebar-mini-icon">
+                            <i class="fa fa-ellipsis-h"></i>
+                        </span>
+                        <h4 class="text-section">Components</h4>
+                    </li>
                     <li class="nav-item">
-                        <a href="/profil">
+                        <a data-toggle="collapse" href="#profil">
                             <i class="fas fa-pen-square"></i>
                             <p>Profile</p>
-                            {{-- <span class="caret"></span> --}}
-                        </a>              
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="profil">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a href="/profil">
+                                        <span class="sub-item">Profile</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>              
+                        <a data-toggle="collapse" href="#galeri">
+                            <i class="fas fa-layer-group"></i>
+                            <p>Gallery</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="galeri">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a href="/galeri">
+                                        <span class="sub-item">Galeri</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </div>
