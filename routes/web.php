@@ -2,8 +2,7 @@
 
 use App\Http\Controllers\GaleriController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Controller;
-use App\Http\Controllers\ProfilController;
+use App\Http\Livewire;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +18,6 @@ use App\Http\Controllers\ProfilController;
 Route::get('/', function () {
     return view('layout.master');
 });
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-});
 Route::get('/profil', function () {
     return view('profil.index');
 });
@@ -30,6 +26,13 @@ Route::get('/profil/create', function () {
 });
 
 Route::resource('profil', ProfilController::class); 
+
+
+// Route::get('profil', App\Http\Livewire\Profil::class);
+Route::get('profil', function() {
+    return view('layout.master');
+});
+
 
 Auth::routes();
 

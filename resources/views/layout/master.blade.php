@@ -24,7 +24,7 @@
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="{{ url('/')}}/assets/css/demo.css">
-
+    @livewireStyles
 </head>
 <body>
 
@@ -71,6 +71,7 @@
 
     
 	@include('layout.script')
+    @livewireScripts
 </body>
 
 </html>
