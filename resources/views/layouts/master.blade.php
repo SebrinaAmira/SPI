@@ -30,47 +30,20 @@
 
     <div class="wrapper">
 		<!-- Navbar Header -->
-        @include('layout.navbar')   
+        @include('layouts.navbar')   
 	    <!-- End Navbar -->
     
         <!-- Sidebar -->
-        @include('layout.sidebar')
+        @include('layouts.sidebar')
         <!-- End Sidebar -->
 
         <div class="main-panel">
             @yield('content')
-            {{-- <div class="content">
-                <div class="page-inner">
-                    <div class="page-header">
-                        <h4 class="page-title">Dashboard</h4>
-                        <ul class="breadcrumbs">
-                            <li class="nav-home">
-                                <a href="#">
-                                    <i class="flaticon-home"></i>
-                                </a>
-                            </li>
-                            <li class="separator">
-                                <i class="flaticon-right-arrow"></i>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#">Pages</a>
-                            </li>
-                            <li class="separator">
-                                <i class="flaticon-right-arrow"></i>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#">Starter Page</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="page-category">Inner page content goes here</div>
-                </div>
-            </div> --}}
         </div>
     </div>
 
     
-	@include('layout.script')
+	@include('layouts.script')
     @livewireScripts
 </body>
 

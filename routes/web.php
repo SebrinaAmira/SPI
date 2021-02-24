@@ -16,7 +16,7 @@ use App\Http\Livewire;
 */
 
 Route::get('/', function () {
-    return view('layout.master');
+    return view('layouts.master');
 });
 Route::get('/profil', function () {
     return view('profil.index');
@@ -28,9 +28,9 @@ Route::get('/profil/create', function () {
 Route::resource('profil', ProfilController::class); 
 
 
-// Route::get('profil', App\Http\Livewire\Profil::class);
+Route::get('profil', App\Http\Livewire\Profil::class);
 Route::get('profil', function() {
-    return view('layout.master');
+    return view('livewire');
 });
 
 

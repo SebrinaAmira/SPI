@@ -1,7 +1,5 @@
-@extends('layout.master')
-
-
+@extends('layouts.master')
 
 @section('content')
-    <profil:index />
+    <livewire:profil />
 @endsection
