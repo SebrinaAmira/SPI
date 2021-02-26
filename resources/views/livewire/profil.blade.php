@@ -28,7 +28,7 @@
                     </div>
                     <div class="form-group mt-2">
                         <label for="exampleFormControlInput1">Status</label>
-                        <input type="text" class="form-controlstatus" name="status" id="exampleFormControlInput1" value="status">
+                        <input type="text" class="form-control" name="status" id="exampleFormControlInput1" value="status">
                     </div>
                     <div class="form-group mt-2">
                         <label for="exampleFormControlInput1">Created_by</label>
