@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProfil extends Migration
+class CreateLayanan extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateProfil extends Migration
      */
     public function up()
     {
-        Schema::create('profil', function (Blueprint $table) {
+        Schema::create('layanan', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('alamat');
-            $table->string('fb');
-            $table->char('instagram');
-            $table->char('telepon');
-            $table->string('deskripsi_konten');
+            $table->string('judul');
+            $table->string('deskripsi');
+            $table->string('gambar');
             $table->enum('status', ['Show', 'Hide']);
             $table->timestamps();
         });
@@ -32,6 +30,6 @@ class CreateProfil extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profil');
+        Schema::dropIfExists('layanan');
     }
 }

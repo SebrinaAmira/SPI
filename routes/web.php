@@ -4,6 +4,9 @@ use App\Http\Livewire\Gallery\Create;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Livewire\Gallery\Index as Galeri;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Livewire\Profiles\Index as Profile;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,17 +27,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', function () {
     return view('layouts.master');
 });
-Route::get('/profil', function () {
-    return view('profil.index');
-});
-Route::get('/profil/create', function () {
-    return view('profil.create');
-});
 
-Route::resource('profil', ProfilController::class);
-
+Route::get('profil', Profile::class);
 
 Route::get('galeri', Galeri::class);
-
-// Route::get('galeri/edit/{id}',  [GaleriController::class, 'edit']);
-// Route::get('galeri/delete/{id}', [GaleriController::class, 'delete']);
