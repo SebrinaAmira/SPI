@@ -4,17 +4,19 @@ namespace App\Http\Livewire\Layanan;
 
 use Livewire\Component;
 use App\Models\Layanan;
+use Livewire\WithFileUploads;
 
 class Index extends Component
 {
+    use WithFileUploads;
     public $judul, $deskripsi, $gambar, $status, $layanan_id, $isForm;
     public $statusUpdate = false;
 
     protected $rules = [
         'judul' => 'required',
-        'deskripsi' => 'required',
         'gambar' => 'required',
         'status' => 'required',
+        'deskripsi' => 'required',
     ];
 
     public function back() 
@@ -31,17 +33,55 @@ class Index extends Component
     {
         $lynan = $this->validate([
             'judul' => 'required',
-            'deskripsi' => 'required',
             'gambar' => 'required',
             'status' => 'required',
+            'deskripsi' => 'required',
         ]);
+
+        if ($this->layanan_id) {
+
+            if ($this->gambar) {
+                $lynan['image'] = $this->gambar;
+                $lynan = $this->validate([
+                    'gambar' => 'image|max:1024'
+                ]);
+
+                $lynan['gambar'] = md5($this->gambar . microtime()) . '.' . $this->gambar->extension();
+                $this->gambar->storeAs('photos', $lynan['gambar']);
+            }
+
+            $lynan = Layanan::find($this->layanan_id);
+            $lynan->update([
+                'judul' => $this->judul,
+                'gambar' => $lynan['gambar'],
+                'deskripsi' => $this->deskripsi,
+                'status' => $this->status,
+            ]);
 
         Layanan::updateOrCreate(['id' => $this->layanan_id], [
             'judul' => $this->judul,
             'gambar' => $this->gambar,
-            'deskripsi' => $this->deskripsi,
             'status' => $this->status,
+            'deskripsi' => $this->deskripsi,
         ]);
+        
+        $this->openForm();
+
+        } else {
+
+            if ($lynan['gambar']) {
+                $lynan['gambar'] = md5($this->gambar . microtime()) . '.' . $lynan['gambar']->extension();
+                $this->gambar->storeAs('photos', $lynan['gambar']);
+            }
+
+
+            Layanan::updateOrCreate(['id' => $this->layanan_id], [
+                'judul' => $this->judul,
+                'gambar' => $lynan['gambar'],
+                'status' => $this->status,
+                'deskripsi' => $this->deskripsi,
+            ]);
+        }
         
         $this->reset();
         $this->closeForm();
@@ -53,11 +93,39 @@ class Index extends Component
         $lynan = Layanan::find($id);
         $this->layanan_id = $id;
         $this->judul = $lynan->judul;
-        $this->fb = $lynan->fb;
+        $this->gambar = $lynan->gambar;
         $this->deskripsi = $lynan->deskripsi;
         $this->status = $lynan->status;
 
         $this->openForm();
+    }
+
+    public function update()
+    {
+        $lynan = $this->validate();
+
+        if ($this->gambar) {
+            $lynan['image'] = $this->gambarlama;
+            $lynan = $this->validate([
+                'gambar' => 'gambar|max:1024'
+            ]);
+
+            $lynan['gambar'] = md5($this->gambar . microtime()) . '.' . $this->gambar->extension();
+            $this->gambar->storeAs('photos', $lynan['gambar']);
+        }
+
+        if ($this->layanan_id) {
+            $lynan = Layanan::find($this->layanan_id);
+            $lynan->update([
+                'judul' => $this->judul,
+                'gambar' => $lynan['gambar'],
+                'status' => $this->status,
+                'deskripsi' => $this->deskripsi,
+            ]);
+
+        }
+
+            $this->openForm();
     }
 
     public function delete($id)
@@ -66,7 +134,12 @@ class Index extends Component
         $this->judul = $lynan->judul;
 
         if($id){
-            Layanan::where('id',$id)->delete();
+            $lynan = Layanan::find($id);
+            if ($lynan->gambar <> "") {
+                unlink(public_path('storage/photos/') . '/' . $lynan->gambar);
+            }
+
+            $lynan->delete();
         }
     }
 

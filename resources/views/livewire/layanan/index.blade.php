@@ -31,7 +31,8 @@
                             <tr>
                                 <th scope="row">{{ $loop->iteration}}</th>
                                 <td>{{ $lyn->judul}}</td>
-                                <td>{{ $lyn->gambar}}</td>
+                                <td><img src="{{ url('storage/photos/' . $lyn->gambar) }}" width="80px" height="80px">
+                                </td>
                                 <td>{{ $lyn->status}}</td>
                                 <td>{{ $lyn->deskripsi}}</td>
                                 <td>

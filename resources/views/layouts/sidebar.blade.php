@@ -75,6 +75,20 @@
                                 </li>
                             </ul>
                         </div>              
+                        <a data-toggle="collapse" href="#galeri">
+                            <i class="fas fa-th-list"></i>
+                            <p>Gallery</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="galeri">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a href="/galeri">
+                                        <span class="sub-item">Galeri</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>              
                         <a data-toggle="collapse" href="#layanan">
                             <i class="fas fa-layer-group"></i>
                             <p>Layanan</p>
