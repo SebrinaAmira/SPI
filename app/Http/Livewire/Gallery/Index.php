@@ -130,7 +130,8 @@ class Index extends Component
         $data = $this->validate([
             'judul' => 'required',
             'deskripsi' => 'required',
-            'status' => 'required', // 1MB Max
+            'status' => 'required',
+            'gambar' => 'image|max:1024'
         ]);
 
         if ($this->galeriId) {
