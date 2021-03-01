@@ -117,6 +117,20 @@
                                 </li>
                             </ul>
                         </div>
+                        <a data-toggle="collapse" href="#produk">
+                            <i class="fas fa-desktop"></i>
+                            <p>Produk</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="produk">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a href="/produk">
+                                        <span class="sub-item">Produk</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </div>
