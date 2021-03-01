@@ -25,7 +25,7 @@ class Index extends Component
         'judul' => 'required',
         'deskripsi' => 'required',
         'status' => 'required',
-        'gambar' => 'required|max:1024', // 1MB Max
+        'gambar' => 'required|image|max:1024', // 1MB Max
     ];
 
     public function back()
@@ -35,17 +35,7 @@ class Index extends Component
 
     public function create()
     {
-        $this->openForm();
-    }
-
-    public function openForm()
-    {
         $this->isFrom = true;
-    }
-
-    public function closeForm()
-    {
-        $this->isFrom = false;
     }
 
     public function render()
@@ -56,55 +46,15 @@ class Index extends Component
             ->extends('layouts.master');
     }
 
-    public function getGaleri($id)
-    {
-        $this->statusUpdate = true;
-        $gallerys = Galeri::find($id);
-        $this->emit('getGaleri', $gallerys);
-    }
-
     public function edit($id)
     {
         $data = Galeri::find($id);
         $this->judul = $data->judul;
-        $this->gambar = $data->gambar;
+        $this->gambarlama = $data->gambar;
         $this->status = $data->status;
         $this->deskripsi = $data->deskripsi;
         $this->galeriId = $data->id;
-        $this->openForm();
-    }
-
-    public function update()
-    {
-        $data = $this->validate();
-
-        if ($this->gambar) {
-            $data['image'] = $this->gambarlama;
-            $data = $this->validate([
-                'gambar' => 'gambar|max:1024'
-            ]);
-
-            $data['gambar'] = md5($this->gambar . microtime()) . '.' . $this->gambar->extension();
-            $this->gambar->storeAs('photos', $data['gambar']);
-        }
-
-
-
-        if ($this->galeriId) {
-            $galeri = Galeri::find($this->galeriId);
-            $galeri->update([
-                'judul' => $this->judul,
-                'deskripsi' => $this->deskripsi,
-                'status' => $this->status,
-                'gambar' => $data['gambar'],
-                'created_by' => Auth::user()->id,
-                'updated_by' => Auth::user()->id,
-            ]);
-
-
-
-            $this->openForm();
-        }
+        $this->isFrom = true;
     }
 
     public function destroy($id)
@@ -127,67 +77,40 @@ class Index extends Component
 
     public function store()
     {
-        $data = $this->validate([
-            'judul' => 'required',
-            'deskripsi' => 'required',
-            'status' => 'required',
-            'gambar' => 'image|max:1024'
-        ]);
-
         if ($this->galeriId) {
-
             if ($this->gambar) {
-                $data['image'] = $this->gambar;
-                $data = $this->validate([
-                    'gambar' => 'image|max:1024'
-                ]);
-
+                $data = $this->validate();
+                $data['updated_by'] = Auth::user()->id;
                 $data['gambar'] = md5($this->gambar . microtime()) . '.' . $this->gambar->extension();
                 $this->gambar->storeAs('photos', $data['gambar']);
+            } else {
+                $data = $this->validate([
+                    'judul' => 'required',
+                    'deskripsi' => 'required',
+                    'status' => 'required',
+                ]);
+                $data['updated_by'] = Auth::user()->id;
+                $data['gambar'] = $this->gambarlama;
             }
 
             $galeri = Galeri::find($this->galeriId);
-            $galeri->update([
-                'judul' => $this->judul,
-                'deskripsi' => $this->deskripsi,
-                'status' => $this->status,
-                'gambar' => $data['gambar'],
-                'created_by' => Auth::user()->id,
-                'updated_by' => Auth::user()->id,
-            ]);
+            $galeri->update($data);
 
-
-
-            $this->openForm();
+            $this->isFrom = true;
         } else {
 
-            if ($data['gambar']) {
-                $data['gambar'] = md5($this->gambar . microtime()) . '.' . $data['gambar']->extension();
-                $this->gambar->storeAs('photos', $data['gambar']);
-            }
+            $data = $this->validate();
+            $data['gambar'] = md5($this->gambar . microtime()) . '.' . $this->gambar->extension();
+            $this->gambar->storeAs('photos', $data['gambar']);
+            $data['created_by'] = Auth::user()->id;
+            $data['updated_by'] = Auth::user()->id;
 
-
-            Galeri::updateOrCreate(['id' => $this->galeriId], [
-                'judul' => $this->judul,
-                'deskripsi' => $this->deskripsi,
-                'status' => $this->status,
-                'gambar' => $data['gambar'],
-                'created_by' => Auth::user()->id,
-                'updated_by' => Auth::user()->id,
-            ]);
+            Galeri::create($data);
         }
 
 
         $this->reset();
-        $this->closeForm();
-    }
-
-    public function showGaleri($galeri)
-    {
-        $this->judul = $galeri['name'];
-        $this->deskripsi = $galeri['phone'];
-        $this->gambar = $galeri['gambar'];
-        $this->status = $galeri['status'];
+        $this->isFrom = false;
     }
 
     private function resetInput()
