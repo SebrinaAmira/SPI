@@ -23,9 +23,9 @@ class Index extends Component
 
     protected $rules = [
         'judul' => 'required',
-            'deskripsi' => 'required',
-            'status' => 'required',
-            'gambar' => 'required|max:1024', // 1MB Max
+        'deskripsi' => 'required',
+        'status' => 'required',
+        'gambar' => 'required|max:1024', // 1MB Max
     ];
 
     public function back()
@@ -40,20 +40,20 @@ class Index extends Component
 
     public function openForm()
     {
-        $this->isFrom=true;
+        $this->isFrom = true;
     }
 
     public function closeForm()
     {
-        $this->isFrom=false;
+        $this->isFrom = false;
     }
 
     public function render()
     {
         $gallerys = Galeri::all();
 
-        return view('livewire.gallery.index',['gallerys'=>$gallerys])
-        ->extends('layouts.master');
+        return view('livewire.gallery.index', ['gallerys' => $gallerys])
+            ->extends('layouts.master');
     }
 
     public function getGaleri($id)
@@ -70,27 +70,26 @@ class Index extends Component
         $this->gambar = $data->gambar;
         $this->status = $data->status;
         $this->deskripsi = $data->deskripsi;
-        
+        $this->galeriId = $data->id;
         $this->openForm();
     }
 
     public function update()
     {
         $data = $this->validate();
-            
-        $data['image'] = $this->gambarlama;
-            if ($this->gambar) {
-                $data = $this->validate([
+
+        if ($this->gambar) {
+            $data['image'] = $this->gambarlama;
+            $data = $this->validate([
                 'gambar' => 'gambar|max:1024'
-                ]);
+            ]);
 
-                    $data['gambar'] = md5($this->gambar . microtime()) . '.' . $this->gambar->extension();
+            $data['gambar'] = md5($this->gambar . microtime()) . '.' . $this->gambar->extension();
             $this->gambar->storeAs('photos', $data['gambar']);
+        }
 
-            }
 
 
-        
         if ($this->galeriId) {
             $galeri = Galeri::find($this->galeriId);
             $galeri->update([
@@ -102,7 +101,7 @@ class Index extends Component
                 'updated_by' => Auth::user()->id,
             ]);
 
-            
+
 
             $this->openForm();
         }
@@ -112,12 +111,12 @@ class Index extends Component
     {
         if ($id) {
             $data = Galeri::find($id);
-            if ($data->gambar <> ""){
-                unlink(public_path('storage/photos/').'/'.$data->gambar);
+            if ($data->gambar <> "") {
+                unlink(public_path('storage/photos/') . '/' . $data->gambar);
             }
-            
-            $data -> delete();
-            session()->flash('message', 'Contact was deleted!' );
+
+            $data->delete();
+            session()->flash('message', 'Contact was deleted!');
         }
     }
 
@@ -131,24 +130,53 @@ class Index extends Component
         $data = $this->validate([
             'judul' => 'required',
             'deskripsi' => 'required',
-            'status' => 'required',
-            'gambar' => 'required|max:1024', // 1MB Max
+            'status' => 'required', // 1MB Max
         ]);
 
-        
-        $data['gambar'] = md5($this->gambar . microtime()) . '.' . $this->gambar->extension();
-        $this->gambar->storeAs('photos', $data['gambar']);
-        
+        if ($this->galeriId) {
 
-        Galeri::updateOrCreate([
-            'judul' => $this->judul,
-            'deskripsi' => $this->deskripsi,
-            'status' => $this->status,
-            'gambar' => $data['gambar'],
-            'created_by' => Auth::user()->id,
-            'updated_by' => Auth::user()->id,
-        ]);
-        
+            if ($this->gambar) {
+                $data['image'] = $this->gambar;
+                $data = $this->validate([
+                    'gambar' => 'image|max:1024'
+                ]);
+
+                $data['gambar'] = md5($this->gambar . microtime()) . '.' . $this->gambar->extension();
+                $this->gambar->storeAs('photos', $data['gambar']);
+            }
+
+            $galeri = Galeri::find($this->galeriId);
+            $galeri->update([
+                'judul' => $this->judul,
+                'deskripsi' => $this->deskripsi,
+                'status' => $this->status,
+                'gambar' => $data['gambar'],
+                'created_by' => Auth::user()->id,
+                'updated_by' => Auth::user()->id,
+            ]);
+
+
+
+            $this->openForm();
+        } else {
+
+            if ($data['gambar']) {
+                $data['gambar'] = md5($this->gambar . microtime()) . '.' . $data['gambar']->extension();
+                $this->gambar->storeAs('photos', $data['gambar']);
+            }
+
+
+            Galeri::updateOrCreate(['id' => $this->galeriId], [
+                'judul' => $this->judul,
+                'deskripsi' => $this->deskripsi,
+                'status' => $this->status,
+                'gambar' => $data['gambar'],
+                'created_by' => Auth::user()->id,
+                'updated_by' => Auth::user()->id,
+            ]);
+        }
+
+
         $this->reset();
         $this->closeForm();
     }
@@ -168,5 +196,4 @@ class Index extends Component
         $this->status = null;
         $this->deskripsi = null;
     }
-
 }

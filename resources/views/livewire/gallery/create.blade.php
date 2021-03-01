@@ -1,11 +1,9 @@
 @section('title', 'Create Data')
 
 <div class="card">
-    <div class="card-header mt-3">
-        <h1>Tambah Data</h1>
-    </div>
     <div class="card-body">
         <form wire:submit.prevent="store" enctype="multipart/form-data">
+            <input type="hidden" name="" wire:model="galeriId">
             <div class="form-group">
                 <label>Judul</label>
                 <input type="text" wire:model="judul" class="form-control">

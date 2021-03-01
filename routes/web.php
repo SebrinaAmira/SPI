@@ -1,8 +1,5 @@
 <?php
 
-use App\Http\Livewire\Gallery\Create;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Livewire\Gallery\Index as Galeri;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
