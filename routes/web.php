@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\GaleriController;
+use App\Http\Livewire\Gallery\Create;
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Livewire\Gallery\Index as Galeri;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
 Route::get('/', function () {
     return view('layouts.master');
 });
@@ -26,24 +31,10 @@ Route::get('/profil/create', function () {
     return view('profil.create');
 });
 
-Route::resource('profil', ProfilController::class); 
+Route::resource('profil', ProfilController::class);
 
 
-Route::get('profil', App\Http\Livewire\Profil::class);
-Route::get('profil', function() {
-    return view('livewire');
-});
+Route::get('galeri', Galeri::class);
 
-
-Auth::routes();
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-Route::get('galeri', [GaleriController::class, 'index'])->name('galeri');
-Route::get('galeri/create', [GaleriController::class, 'add']);
-Route::post('galeri/update/{id}', [GaleriController::class, 'update']);
-Route::get('galeri/edit/{id}',  [GaleriController::class, 'edit']);
-Route::post('galeri/insert', [GaleriController::class, 'insert']);
-Route::get('galeri/delete/{id}', [GaleriController::class, 'delete']);
+// Route::get('galeri/edit/{id}',  [GaleriController::class, 'edit']);
+// Route::get('galeri/delete/{id}', [GaleriController::class, 'delete']);

@@ -4,7 +4,7 @@
 
 @section('content')
 
-<form action="/galeri/insert" method="POST" enctype="multipart/form-data">
+<form   enctype="multipart/form-data">
 @csrf
 
 <div class="card">
@@ -12,9 +12,10 @@
         <h1>Tambah Data</h1>
     </div>
     <div class="card-body">
+      <form wire:submit.prevent="store" enctype="multipart/form-data">
+        @csrf
       <div class="">
       </div>
-      <form>
           <div class="form-group">
             <label >Judul</label>
             <input type="text" name="judul" class="form-control" >

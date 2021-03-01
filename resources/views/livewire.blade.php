@@ -1,5 +1,5 @@
 @extends('layouts.master')
 
 @section('content')
-    <livewire:profil />
+    <livewire:gallery />
 @endsection
