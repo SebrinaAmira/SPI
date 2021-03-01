@@ -46,5 +46,4 @@
 	@include('layouts.script')
     @livewireScripts
 </body>
-
 </html>

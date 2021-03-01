@@ -1,12 +1,12 @@
-@section('title', 'Profile')
+@section('title', 'Konsultasi')
 <div>
     <div class="card mt-5">
         <div class="card-header mt-2">
-            <h1>Profile</h1>
+            <h1>Konsultasi</h1>
         </div>
         @if($isForm)
         
-            @include('livewire.profiles.create')
+            @include('livewire.konsultasi.create')
 
         @endif
 
@@ -21,32 +21,30 @@
                 <thead>
                     <tr>
                         <th scope="col">No</th>
-                        <th scope="col">Facebook</th>
-                        <th scope="col">Instagram</th>
+                        <th scope="col">Nama</th>
                         <th scope="col">Telepon</th>
+                        <th scope="col">Pesan</th>
                         <th scope="col">Status</th>
                         <th scope="col">Alamat</th>
-                        <th scope="col">Deskripsi</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($profiless as $profile)
+                    @foreach ($knsultasi as $konsul)
                     <tr>
                         <th scope="row">{{ $loop->iteration}}</th>
-                        <td>{{ $profile->fb}}</td>
-                        <td>{{ $profile->instagram}}</td>
-                        <td>{{ $profile->telepon}}</td>
-                        <td>{{ $profile->status}}</td>
-                        <td>{{ $profile->alamat}}</td>
-                        <td>{{ $profile->deskripsi_konten}}</td>
+                        <td>{{ $konsul->nama}}</td>
+                        <td>{{ $konsul->telepon}}</td>
+                        <td>{{ $konsul->pesan}}</td>
+                        <td>{{ $konsul->status}}</td>
+                        <td>{{ $konsul->alamat}}</td>
                         <td>
                             <button class="btn btn-datatable btn-icon btn-transparent-dark mr-2"
-                                wire:click="edit({{ $profile->id }})">
+                                wire:click="edit({{ $konsul->id }})">
                                 <i class="far fa-edit"></i>
                             </button>
                             <button class="btn btn-datatable btn-icon btn-transparent-dark"
-                                wire:click="delete({{ $profile->id }})">
+                                wire:click="delete({{ $konsul->id }})">
                                 <i class="far fa-trash-alt"></i>
                             </button>
                         </td>

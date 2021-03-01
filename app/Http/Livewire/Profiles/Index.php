@@ -7,13 +7,22 @@ use App\Models\Profil;
 
 class Index extends Component
 {
-    public $profileId;
+    public $alamat, $fb, $instagram, $telepon, $deskripsi_konten, $status, $profile_id, $isForm;
     public $statusUpdate = false;
 
-    protected $listeners = [
-        'profileStored' => 'handleStored',
-        'profileUpdated' => 'handleUpdated'
+    protected $rules = [
+        'alamat' => 'required',
+        'fb' => 'required',
+        'instagram' => 'required',
+        'telepon' => 'required',
+        'deskripsi_konten' => 'required',
+        'status' => 'required',
     ];
+
+    public function back() 
+    {
+        redirect('profil'); 
+    }
 
     public function render()
     {
@@ -23,26 +32,17 @@ class Index extends Component
             ->extends('layouts.master');
     }
 
-    public function getProfile($id)
+    public function updated($propertyName)
     {
-        $this->statusUpdate = true;
-        $profiless = Profil::find($id);
-        $this->emit('getProfile', $profiless);
+        $this->validateOnly($propertyName);
     }
 
-    public function handleStored($profiless)
+    public function create() 
     {
-        // dd($profiless);
-        session()->flash('message', 'Profiless ' . $profiless['fb'] . ' was stored!' );
+        $this->openForm();
     }
 
-    public function handleUpdated($profiless)
-    {
-        // dd($profiless);
-        session()->flash('message', 'Profiless ' . $profiless['fb'] . ' was updated!' );
-    }
-
-    public function update()
+    public function store()
     {
         $profiless = $this->validate([
             'alamat' => 'required',
@@ -52,42 +52,53 @@ class Index extends Component
             'deskripsi_konten' => 'required',
             'status' => 'required',
         ]);
-            
-        if ($this->profileId) {
-            $profiless = Profil::find($this->profileId);
-            $profiless->update([
-                'alamat' => $profiless->alamat,
-                'fb' => $profiless->fb,
-                'instagram' => $profiless->instagram,
-                'telepon' => $profiless->telepon,
-                'deskripsi_konten' => $profiless->deskripsi_konten,
-                'status' => $profiless->status,
-            ]);
 
-            $this->resets();
-
-            $this->emit('profileUpdated', $profiless);
-        }
+        Profil::updateOrCreate(['id' => $this->profile_id], [
+            'alamat' => $this->alamat,
+            'fb' => $this->fb,
+            'instagram' => $this->instagram,
+            'telepon' => $this->telepon,
+            'deskripsi_konten' => $this->deskripsi_konten,
+            'status' => $this->status,
+        ]);
+        
+        $this->reset();
+        $this->closeForm();
     }
 
-    public function edit($id){
-        $profiless = Profil::where('id',$id)->first();
+    public function edit($id)
+    {
+        // return $id;
+        $profiless = Profil::find($id);
+        $this->profile_id = $id;
         $this->alamat = $profiless->alamat;
         $this->fb = $profiless->fb;
         $this->instagram = $profiless->instagram;
         $this->telepon = $profiless->telepon;
         $this->deskripsi_konten = $profiless->deskripsi_konten;
         $this->status = $profiless->status;
+
+        $this->openForm();
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         $profiless = Profil::where('id',$id)->first();
         $this->fb = $profiless->fb;
 
         if($id){
             Profil::where('id',$id)->delete();
-            session()->flash('message', 'data berhasil dihapus');
         }
+    }
+
+    public function openForm()
+    {
+        $this->isForm = true;
+    }
+
+    public function closeForm()
+    {
+        $this->isForm = false;
     }
 
 }

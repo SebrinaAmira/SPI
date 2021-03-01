@@ -7,12 +7,12 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Facebook</label>
-                                <input type="text" class="form-control @error('fb') is-invalid @enderror" wire:model="fb" id="exampleFormControlInput1" value="{{ old('fb')}}">
+                                <label for="exampleFormControlInput1">Nama</label>
+                                <input type="text" class="form-control @error('nama') is-invalid @enderror" wire:model="nama" id="exampleFormControlInput1" value="{{ old('nama')}}">
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Instagram</label>
-                                <input type="text" class="form-control @error('instagram') is-invalid @enderror" wire:model="instagram" id="exampleFormControlInput1" value="{{ old('instagram')}}">
+                                <label for="exampleFormControlInput1">Pesan</label>
+                                <input type="text" class="form-control @error('pesan') is-invalid @enderror" wire:model="pesan" id="exampleFormControlInput1" value="{{ old('pesan')}}">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -35,13 +35,9 @@
                         <textarea class="form-control @error('alamat') is-invalid @enderror" wire:model="alamat" id="exampleFormControlTextarea1" rows="3">{{ old('alamat')}}</textarea>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Deskripsi Konten</label>
-                        <textarea class="form-control @error('deskripsi_konten') is-invalid @enderror" wire:model="deskripsi_konten" id="exampleFormControlTextarea1" rows="3">{{ old('deskripsi_konten')}}</textarea>
-                    </div>
-                    <div class="form-group">
                         <button class="btn btn-datatable btn-icon btn-transparent-dark"
                             wire:click="back()">
-                            <i class="far fa-arrow-alt-circle-left"></i>
+                            <i class="far fa-arrow-left"></i>
                         </button>
                         <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
                     </div>

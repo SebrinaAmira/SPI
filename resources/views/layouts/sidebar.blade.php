@@ -75,16 +75,30 @@
                                 </li>
                             </ul>
                         </div>              
-                        <a data-toggle="collapse" href="#galeri">
+                        <a data-toggle="collapse" href="#layanan">
                             <i class="fas fa-layer-group"></i>
-                            <p>Gallery</p>
+                            <p>Layanan</p>
                             <span class="caret"></span>
                         </a>
-                        <div class="collapse" id="galeri">
+                        <div class="collapse" id="layanan">
                             <ul class="nav nav-collapse">
                                 <li>
-                                    <a href="/galeri">
-                                        <span class="sub-item">Galeri</span>
+                                    <a href="/layanan">
+                                        <span class="sub-item">Layanan</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a data-toggle="collapse" href="#konsultasi">
+                            <i class="fas fa-table"></i>
+                            <p>Konsultasi</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="konsultasi">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a href="/konsultasi">
+                                        <span class="sub-item">Konsultasi</span>
                                     </a>
                                 </li>
                             </ul>

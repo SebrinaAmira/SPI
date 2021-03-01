@@ -2,7 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Livewire\Profiles;
+use App\Http\Livewire\Layanan;
+use App\Http\Livewire\Konsultasi;
 use App\Http\Livewire\Profiles\Index as Profile;
+use App\Http\Livewire\Layanan\Index as Layan;
+use App\Http\Livewire\Konsultasi\Index as Konsul;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,11 +30,5 @@ Route::get('/', function () {
 });
 
 Route::get('profil', Profile::class);
-
-
-Route::get('galeri', [GaleriController::class, 'index'])->name('galeri');
-Route::get('galeri/create', [GaleriController::class, 'add']);
-Route::post('galeri/update/{id}', [GaleriController::class, 'update']);
-Route::get('galeri/edit/{id}',  [GaleriController::class, 'edit']);
-Route::post('galeri/insert', [GaleriController::class, 'insert']);
-Route::get('galeri/delete/{id}', [GaleriController::class, 'delete']);
+Route::get('layanan', Layan::class);
+Route::get('konsultasi', Konsul::class);
