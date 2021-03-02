@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Konsultasi;
 
 use Livewire\Component;
 use App\Models\Konsultasi;
+use Illuminate\Support\Facades\Auth;
 
 class Index extends Component
 {

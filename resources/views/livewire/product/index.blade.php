@@ -1,15 +1,15 @@
-@section('title', 'Layanan')
+@section('title', 'Produk')
 <div>
     <div class="card mt-5">
         <div class="card-header mt-2">
-            <h1>Layanan</h1>
+            <h1>Produk</h1>
         </div>
         @if($isForm)
-            @include('livewire.layanan.create')
+            @include('livewire.product.create')
         @endif
 
         @if($isForm == false)
-            
+        
             <div class="card-body">
                 <div class="col-md-3">
                     <button wire:click="create()" class="btn btn-primary">Tambah Data</button>
@@ -27,20 +27,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($lynan as $lyn)
+                        @foreach($produks as $produk)
                             <tr>
                                 <th scope="row">{{ $loop->iteration}}</th>
-                                <td>{{ $lyn->judul}}</td>
-                                <td><img src="{{ url('storage/photos/' . $lyn->gambar) }}" width="80px" height="80px"></td>
-                                <td>{{ $lyn->status}}</td>
-                                <td>{{ $lyn->deskripsi}}</td>
+                                <td>{{ $produk->judul}}</td>
+                                <td><img src="{{ url('storage/photos/' . $produk->gambar) }}" width="80px" height="80px">
+                                </td>
+                                <td>{{ $produk->status}}</td>
+                                <td>{{ $produk->deskripsi}}</td>
                                 <td>
                                     <button class="btn btn-datatable btn-icon btn-transparent-dark mr-2"
-                                    wire:click="edit({{ $lyn->id }})">
+                                    wire:click="edit({{ $produk->id }})">
                                     <i class="far fa-edit"></i>
                                 </button>
                                 <button class="btn btn-datatable btn-icon btn-transparent-dark"
-                                    wire:click="delete({{ $lyn->id }})">
+                                    wire:click="delete({{ $produk->id }})">
                                     <i class="far fa-trash-alt"></i>
                                 </button>
                                 </td>

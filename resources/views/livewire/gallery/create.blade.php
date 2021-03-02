@@ -1,5 +1,4 @@
 @section('title', 'Create Data')
-
 <div class="card">
     <div class="card-body">
         <form wire:submit.prevent="store" enctype="multipart/form-data">
@@ -53,7 +52,7 @@
 
                     <i class="fas fa-arrow-left"></i>
                 </button>
-                <button type="submit" class="btn btn-success">Simpan</button>
+                <button type="submit" class="btn btn-info">Simpan</button>
 
         </form>
 

@@ -37,9 +37,9 @@
                     <div class="form-group">
                         <button class="btn btn-datatable btn-icon btn-transparent-dark"
                             wire:click="back()">
-                            <i class="far fa-arrow-left"></i>
+                            <i class="fas fa-arrow-left"></i>
                         </button>
-                        <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                 </form>
             </div>

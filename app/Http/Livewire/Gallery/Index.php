@@ -12,14 +12,7 @@ class Index extends Component
     use WithFileUploads;
 
     public $statusUpdate = false;
-
-    public $judul;
-    public $deskripsi;
-    public $gambar;
-    public $gambarlama;
-    public $status;
-    public $galeriId;
-    public $isFrom;
+    public $judul,  $deskripsi,  $gambar,  $gambarlama,  $status,  $galeriId,  $isFrom;
 
     protected $rules = [
         'judul' => 'required',
@@ -66,7 +59,6 @@ class Index extends Component
             }
 
             $data->delete();
-            session()->flash('message', 'Contact was deleted!');
         }
     }
 
@@ -97,6 +89,7 @@ class Index extends Component
             $galeri->update($data);
 
             $this->isFrom = true;
+            
         } else {
 
             $data = $this->validate();
@@ -107,7 +100,6 @@ class Index extends Component
 
             Galeri::create($data);
         }
-
 
         $this->reset();
         $this->isFrom = false;

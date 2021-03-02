@@ -41,7 +41,7 @@
                         <td>
                             <button class="btn btn-datatable btn-icon btn-transparent-dark mr-2"
                                 wire:click="edit({{ $konsul->id }})">
-                                <i class="far fa-edit"></i>
+                                <i class="fas fa-edit"></i>
                             </button>
                             <button class="btn btn-datatable btn-icon btn-transparent-dark"
                                 wire:click="delete({{ $konsul->id }})">

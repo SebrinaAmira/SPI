@@ -13,7 +13,6 @@
 
         @if ($isFrom == false)
 
-
             <div class="card-body">
                 <div class="col-md-3">
                     <button wire:click="create()" class="btn btn-primary">Tambah Data</button>
@@ -37,14 +36,13 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $data->judul }}</td>
                                 <td>{{ $data->deskripsi }}</td>
-                                <td><img src="{{ url('storage/photos/' . $data->gambar) }}" width="80px" height="80px">
-                                </td>
+                                <td><img src="{{ url('storage/photos/' . $data->gambar) }}" width="80px" height="80px"></td>
                                 <td>{{ $data->status }}</td>
                                 <td>{{ $data->created_by }}</td>
                                 <td>{{ $data->updated_by }}</td>
                                 <td><button class="btn btn-datatable btn-icon btn-transparent-dark"
                                         wire:click="edit({{ $data->id }})">
-                                        <i class="far fa-edit"></i>
+                                        <i class="fas fa-edit"></i>
                                     </button>
                                     <button class="btn btn-datatable btn-icon btn-transparent-dark"
                                         wire:click="destroy({{ $data->id }})">
