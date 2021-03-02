@@ -87,7 +87,7 @@ class Index extends Component
     public function delete($id)
     {
         $profiless = Profil::where('id',$id)->first();
-        $this->fb = $profiless->fb;
+        $this->profile_id = $id;
 
         if($id){
             Profil::where('id',$id)->delete();
