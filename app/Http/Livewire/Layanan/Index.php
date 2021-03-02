@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Layanan;
 use Livewire\Component;
 use App\Models\Layanan;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Auth;
 
 class Index extends Component
 {
@@ -35,6 +36,7 @@ class Index extends Component
         if ($this->layanan_id) {
             if ($this->gambar) {
                 $lyn = $this->validate();
+                $data['updated_by'] = Auth::user()->id;
                 $lyn['gambar'] = md5($this->gambar . microtime()) . '.' . $this->gambar->extension();
                 $this->gambar->storeAs('photos', $lyn['gambar']);
             } else {
@@ -43,6 +45,7 @@ class Index extends Component
                     'deskripsi' => 'required',
                     'status' => 'required',
                 ]);
+                $data['updated_by'] = Auth::user()->id;
                 $lyn['gambar'] = $this->gambarlama;
             }
 

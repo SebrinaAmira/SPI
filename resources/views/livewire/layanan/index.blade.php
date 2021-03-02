@@ -23,6 +23,8 @@
                             <th scope="col">Gambar</th>
                             <th scope="col">Status</th>
                             <th scope="col">Deskripsi</th>
+                            <th scope="col">Created_by</th>
+                            <th scope="col">Updated_by</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -34,6 +36,8 @@
                                 <td><img src="{{ url('storage/photos/' . $lyn->gambar) }}" width="80px" height="80px"></td>
                                 <td>{{ $lyn->status}}</td>
                                 <td>{{ $lyn->deskripsi}}</td>
+                                <td>{{ $lyn->created_by }}</td>
+                                <td>{{ $lyn->updated_by }}</td>
                                 <td>
                                     <button class="btn btn-datatable btn-icon btn-transparent-dark mr-2"
                                     wire:click="edit({{ $lyn->id }})">

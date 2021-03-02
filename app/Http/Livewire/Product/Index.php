@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Product;
 use Livewire\Component;
 use App\Models\Produk;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Auth;
 
 class Index extends Component
 {
@@ -35,6 +36,7 @@ class Index extends Component
         if ($this->produk_id) {
             if ($this->gambar) {
                 $produks = $this->validate();
+                $data['updated_by'] = Auth::user()->id;
                 $produks['gambar'] = md5($this->gambar . microtime()) . '.' . $this->gambar->extension();
                 $this->gambar->storeAs('photos', $produks['gambar']);
             } else {
@@ -43,9 +45,10 @@ class Index extends Component
                     'deskripsi' => 'required',
                     'status' => 'required',
                 ]);
+                $data['updated_by'] = Auth::user()->id;
                 $produks['gambar'] = $this->gambarlama;
             }
-
+            $data['updated_by'] = Auth::user()->id;
             $produksan = Produk::find($this->produk_id);
             $produksan->update($produks);
 

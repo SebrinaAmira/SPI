@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Profiles;
 
 use Livewire\Component;
 use App\Models\Profil;
+use Illuminate\Support\Facades\Auth;
 
 class Index extends Component
 {
@@ -60,6 +61,7 @@ class Index extends Component
             'telepon' => $this->telepon,
             'deskripsi_konten' => $this->deskripsi_konten,
             'status' => $this->status,
+    
         ]);
         
         $this->reset();
