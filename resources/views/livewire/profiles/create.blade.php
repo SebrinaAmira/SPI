@@ -43,7 +43,7 @@
                             wire:click="back()">
                             <i class="far fa-arrow-alt-circle-left"></i>
                         </button>
-                        <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+                        <button type="submit" class="btn btn-info">Simpan</button>
                     </div>
                 </form>
             </div>

@@ -41,7 +41,7 @@
 
                 <div class="form-group">
                     <label>Deskripsi</label>
-                    <input type="text" wire:model="deskripsi" class="form-control">
+                    <textarea type="text" wire:model="deskripsi" class="form-control"></textarea>
                     @error('deskripsi')
                     <div class="text-danger">
                         <span class="error">{{ $message }}</span>
@@ -50,7 +50,7 @@
                 </div>
                 <button class="btn btn-datatable btn-icon btn-transparent-dark" wire:click="back()">
 
-                    <i class="fas fa-arrow-left"></i>
+                    <i class="fas fa-arrow-alt-circle-left"></i>
                 </button>
                 <button type="submit" class="btn btn-info">Simpan</button>
 

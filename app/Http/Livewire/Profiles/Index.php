@@ -4,10 +4,11 @@ namespace App\Http\Livewire\Profiles;
 
 use Livewire\Component;
 use App\Models\Profil;
+use Illuminate\Support\Facades\Auth;
 
 class Index extends Component
 {
-    public $alamat, $fb, $instagram, $telepon, $deskripsi_konten, $status, $profile_id, $isForm;
+    public $alamat, $fb, $instagram, $telepon, $deskripsi_konten, $status, $created_by, $updated_by, $profile_id, $isForm;
     public $statusUpdate = false;
 
     protected $rules = [
@@ -60,6 +61,8 @@ class Index extends Component
             'telepon' => $this->telepon,
             'deskripsi_konten' => $this->deskripsi_konten,
             'status' => $this->status,
+            'created_by' => Auth::user()->id,
+            'updated_by' => Auth::user()->id,
         ]);
         
         $this->reset();

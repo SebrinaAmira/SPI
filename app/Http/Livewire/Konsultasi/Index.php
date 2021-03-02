@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Index extends Component
 {
-    public $nama, $telepon, $alamat, $pesan, $status, $konsultasi_id, $isForm;
+    public $nama, $telepon, $alamat, $pesan, $status, $konsultasi_id, $isForm, $created_by, $updated_by;
     public $statusUpdate = false;
 
     protected $rules = [
@@ -45,6 +45,8 @@ class Index extends Component
             'alamat' => $this->alamat,
             'pesan' => $this->pesan,
             'status' => $this->status,
+            'created_by' => Auth::user()->id,
+            'updated_by' => Auth::user()->id,
         ]);
         
         $this->reset();
