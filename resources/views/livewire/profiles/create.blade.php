@@ -39,10 +39,6 @@
                         <textarea class="form-control @error('deskripsi_konten') is-invalid @enderror" wire:model="deskripsi_konten" id="exampleFormControlTextarea1" rows="3">{{ old('deskripsi_konten')}}</textarea>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-datatable btn-icon btn-transparent-dark"
-                            wire:click="back()">
-                            <i class="far fa-arrow-alt-circle-left"></i>
-                        </button>
                         <button type="submit" class="btn btn-info">Simpan</button>
                     </div>
                 </form>
