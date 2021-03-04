@@ -9,5 +9,5 @@ class Produk extends Model
 {
     use HasFactory;
     protected $table = 'produk';
-    protected $fillable = ['judul', 'deskripsi', 'gambar', 'status', 'created_by', 'updated_by'];
+    protected $guarded = ['id'];
 }

@@ -21,6 +21,7 @@
                             <th scope="col">No</th>
                             <th scope="col">Judul</th>
                             <th scope="col">Gambar</th>
+                            <th scope="col">Harga</th>
                             <th scope="col">Status</th>
                             <th scope="col">Deskripsi</th>
                             <th scope="col">Created_by</th>
@@ -35,6 +36,7 @@
                                 <td>{{ $produk->judul}}</td>
                                 <td><img src="{{ url('storage/photos/' . $produk->gambar) }}" width="80px" height="80px">
                                 </td>
+                                <td>{{ $produk->harga}}</td>
                                 <td>{{ $produk->status}}</td>
                                 <td>{{ $produk->deskripsi}}</td>
                                 <td>{{ $produk->created_by }}</td>

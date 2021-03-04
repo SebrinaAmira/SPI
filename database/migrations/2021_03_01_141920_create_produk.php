@@ -18,6 +18,7 @@ class CreateProduk extends Migration
             $table->string('judul');
             $table->string('deskripsi');
             $table->string('gambar');
+            $table->integer('harga');
             $table->enum('status', ['Show', 'Hide']);
             $table->unsignedBigInteger('created_by');
             $table->foreign('created_by')->references('id')->on('users');

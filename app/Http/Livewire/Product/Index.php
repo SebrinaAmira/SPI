@@ -11,13 +11,14 @@ class Index extends Component
 {
     use WithFileUploads;
     
-    public $judul,  $deskripsi,  $gambar,  $gambarlama,  $status,  $produk_id,  $isForm;
+    public $judul,  $deskripsi,  $gambar,  $gambarlama,  $status, $harga,  $produk_id,  $isForm;
     public $statusUpdate = false;
 
     protected $rules = [
         'judul' => 'required',
         'deskripsi' => 'required',
         'status' => 'required',
+        'harga' => 'required',
         'gambar' => 'required|image|max:1024', // 1MB Max
     ];
 
@@ -44,24 +45,28 @@ class Index extends Component
                     'judul' => 'required',
                     'deskripsi' => 'required',
                     'status' => 'required',
-                ]);
+                    'harga' => 'required',
+                    ]);
+                    $data['updated_by'] = Auth::user()->id;
+                    $produks['gambar'] = $this->gambarlama;
+                }
                 $data['updated_by'] = Auth::user()->id;
-                $produks['gambar'] = $this->gambarlama;
+                $produksan = Produk::find($this->produk_id);
+                $produksan->update($produks);
+                
+                $this->isFrom = true;
+                
+            } else {
+                // dd(Auth::user()->id);
+                $produks = $this->validate();
+                $produks['gambar'] = md5($this->gambar . microtime()) . '.' . $this->gambar->extension();
+                $this->gambar->storeAs('photos', $produks['gambar']);
+                
+                $produks['created_by'] = Auth::user()->id;
+                $produks['updated_by'] = Auth::user()->id;
+                
+                Produk::create($produks);
             }
-            $data['updated_by'] = Auth::user()->id;
-            $produksan = Produk::find($this->produk_id);
-            $produksan->update($produks);
-
-            $this->isFrom = true;
-            
-        } else {
-
-            $produks = $this->validate();
-            $produks['gambar'] = md5($this->gambar . microtime()) . '.' . $this->gambar->extension();
-            $this->gambar->storeAs('photos', $produks['gambar']);
-
-            Produk::create($produks);
-        }
 
         $this->reset();
         $this->isFrom = false;
@@ -75,6 +80,7 @@ class Index extends Component
         $this->judul = $produks->judul;
         $this->gambarlama = $produks->gambar;
         $this->deskripsi = $produks->deskripsi;
+        $this->harga = $produks->harga;
         $this->status = $produks->status;
         $this->produk_id = $produks->id;
 
