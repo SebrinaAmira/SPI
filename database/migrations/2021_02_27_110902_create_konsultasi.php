@@ -20,8 +20,6 @@ class CreateKonsultasi extends Migration
             $table->string('alamat');
             $table->string('pesan');
             $table->enum('status', ['Show', 'Hide']);
-            $table->unsignedBigInteger('created_by');
-            $table->foreign('created_by')->references('id')->on('users');
             $table->unsignedBigInteger('updated_by');
             $table->foreign('updated_by')->references('id')->on('users');
             $table->timestamps();

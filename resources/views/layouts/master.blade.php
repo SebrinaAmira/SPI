@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    
+    @include('layouts.footer')
 	@include('layouts.script')
     @livewireScripts
 </body>

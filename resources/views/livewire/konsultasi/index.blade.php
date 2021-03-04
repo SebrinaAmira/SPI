@@ -26,7 +26,6 @@
                         <th scope="col">Pesan</th>
                         <th scope="col">Status</th>
                         <th scope="col">Alamat</th>
-                        <th scope="col">created_by</th>
                         <th scope="col">updated_by</th>
                         <th scope="col">Action</th>
                     </tr>
@@ -40,7 +39,6 @@
                         <td>{{ $konsul->pesan}}</td>
                         <td>{{ $konsul->status}}</td>
                         <td>{{ $konsul->alamat}}</td>
-                        <td>{{ $konsul->created_by }}</td>
                         <td>{{ $konsul->updated_by }}</td>
                         <td>
                             <button class="btn btn-datatable btn-icon btn-transparent-dark mr-2"
