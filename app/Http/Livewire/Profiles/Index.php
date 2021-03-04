@@ -23,11 +23,11 @@ class Index extends Component
     public function render()
     {
         $profiless = Profil::orderBy('id', 'ASC')->first();
-        if($profiless) {
-            $this->edit($profiless->id);
-        } else {
+        // if($profiless) {
+        //     $this->edit($profiless->id);
+        // } else {
             $this->openForm();
-        }
+        // }
 
         return view('livewire.profiles.index', ['profiless'=>$profiless])
             ->extends('layouts.master');
@@ -84,7 +84,7 @@ class Index extends Component
         //     'updated_by' => Auth::user()->id,
         // ]);
 
-        $this->reset();
+        // $this->reset();
         $this->closeForm();
         
     }
@@ -106,7 +106,16 @@ class Index extends Component
 
     public function mount()
     {
-        return 'ketik';
+        $profiless = Profil::latest()->first();
+        $this->profile_id = $profiless->id;
+        $this->alamat = $profiless->alamat;
+        $this->fb = $profiless->fb;
+        $this->instagram = $profiless->instagram;
+        $this->telepon = $profiless->telepon;
+        $this->deskripsi_konten = $profiless->deskripsi_konten;
+        $this->status = $profiless->status;
+        return view('livewire.profiles.index', ['profiless'=>$profiless])
+            ->extends('layouts.master');
         // $this->edit();
     }
 

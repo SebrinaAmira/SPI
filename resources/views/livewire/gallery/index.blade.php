@@ -25,8 +25,8 @@
                             <th scope="col">Deskripsi</th>
                             <th scope="col">Gambar</th>
                             <th scope="col">Status</th>
-                            <th scope="col">Created_by</th>
-                            <th scope="col">Updated_by</th>
+                            <th scope="col">created_by</th>
+                            <th scope="col">updated_by</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>

@@ -21,15 +21,18 @@ use App\Http\Livewire\Product\Index as Produks;
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
 
 
 Route::get('/', function () {
+    return view('welcome');
+})->middleware('guest');
+
+Route::get('/dashboard', function () {
     return view('layouts.master');
 });
-
-Route::get('profil', Profile::class);
-Route::get('layanan', Layan::class);
-Route::get('konsultasi', Konsul::class);
-Route::get('galeri', Galeri::class);
-Route::get('produk', Produks::class);
+Route::get('profil', Profile::class)->middleware('auth');
+Route::get('layanan', Layan::class)->middleware('auth');
+Route::get('konsultasi', Konsul::class)->middleware('auth');
+Route::get('galeri', Galeri::class)->middleware('auth');
+Route::get('produk', Produks::class)->middleware('auth');
