@@ -101,7 +101,13 @@ class Index extends Component
         $this->deskripsi_konten = $profiless->deskripsi_konten;
         $this->status = $profiless->status;
 
-        $this->openForm();
+        // $this->openForm();
+    }
+
+    public function mount()
+    {
+        return 'ketik';
+        // $this->edit();
     }
 
     public function delete($id)

@@ -5,6 +5,7 @@
             <div class="card-body">
                 <form wire:submit.prevent="store">
                     <div class="row">
+                        <input type="hidden" name="profile_id" wire:model="profile_id">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Facebook</label>
