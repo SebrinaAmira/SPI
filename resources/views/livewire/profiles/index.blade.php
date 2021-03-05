@@ -5,12 +5,12 @@
             <h1>Profile</h1>
         </div>
         @if($isForm)
-        
+
             @include('livewire.profiles.create')
 
         @endif
 
-        @if ($isForm == false)  
+        @if ($isForm == false)
 
         <div class="card-body">
             {{-- <div class="col-md-3">
@@ -101,5 +101,5 @@
         @endif
 
     </div>
-    
+
 </div>
