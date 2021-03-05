@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\DB;
 
 class Galeri extends Model
 {
+    use HasFactory;
+    protected $table = 'galeri';
+    protected $fillable = ['judul', 'deskripsi', 'gambar', 'status', 'created_by', 'updated_by'];
+
     public function allData()
     {
         return DB::table('galeri')->get();

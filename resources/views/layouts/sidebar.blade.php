@@ -76,7 +76,7 @@
                             </ul>
                         </div>              
                         <a data-toggle="collapse" href="#galeri">
-                            <i class="fas fa-layer-group"></i>
+                            <i class="fas fa-th-list"></i>
                             <p>Gallery</p>
                             <span class="caret"></span>
                         </a>
@@ -85,6 +85,48 @@
                                 <li>
                                     <a href="/galeri">
                                         <span class="sub-item">Galeri</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>              
+                        <a data-toggle="collapse" href="#layanan">
+                            <i class="fas fa-layer-group"></i>
+                            <p>Layanan</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="layanan">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a href="/layanan">
+                                        <span class="sub-item">Layanan</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a data-toggle="collapse" href="#konsultasi">
+                            <i class="fas fa-table"></i>
+                            <p>Konsultasi</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="konsultasi">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a href="/konsultasi">
+                                        <span class="sub-item">Konsultasi</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a data-toggle="collapse" href="#produk">
+                            <i class="fas fa-desktop"></i>
+                            <p>Produk</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="produk">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a href="/produk">
+                                        <span class="sub-item">Produk</span>
                                     </a>
                                 </li>
                             </ul>

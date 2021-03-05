@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGaleri extends Migration
+class CreateProduk extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateGaleri extends Migration
      */
     public function up()
     {
-        Schema::create('galeri', function (Blueprint $table) {
+        Schema::create('produk', function (Blueprint $table) {
             $table->increments('id');
             $table->string('judul');
-            $table->text('deskripsi');
+            $table->string('deskripsi');
             $table->string('gambar');
-            $table->enum('status',['Show','Hide']);
+            $table->integer('harga');
+            $table->enum('status', ['Show', 'Hide']);
             $table->unsignedBigInteger('created_by');
             $table->foreign('created_by')->references('id')->on('users');
             $table->unsignedBigInteger('updated_by');
@@ -34,6 +35,6 @@ class CreateGaleri extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('galeri');
+        Schema::dropIfExists('produk');
     }
 }

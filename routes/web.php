@@ -1,8 +1,12 @@
 <?php
 
-use App\Http\Controllers\GaleriController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Livewire\Profiles\Index as Profile;
+use App\Http\Livewire\Layanan\Index as Layan;
+use App\Http\Livewire\Konsultasi\Index as Konsul;
+use App\Http\Livewire\Gallery\Index as Galeri;
+use App\Http\Livewire\Product\Index as Produks;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,33 +19,20 @@ use App\Http\Livewire;
 |
 */
 
-Route::get('/', function () {
-    return view('layout.master');
-});
-Route::get('/profil', function () {
-    return view('profil.index');
-});
-Route::get('/profil/create', function () {
-    return view('profil.create');
-});
-
-Route::resource('profil', ProfilController::class); 
-
-
-// Route::get('profil', App\Http\Livewire\Profil::class);
-Route::get('profil', function() {
-    return view('layout.master');
-});
-
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
 
 
-Route::get('galeri', [GaleriController::class, 'index'])->name('galeri');
-Route::get('galeri/create', [GaleriController::class, 'add']);
-Route::post('galeri/update/{id}', [GaleriController::class, 'update']);
-Route::get('galeri/edit/{id}',  [GaleriController::class, 'edit']);
-Route::post('galeri/insert', [GaleriController::class, 'insert']);
-Route::get('galeri/delete/{id}', [GaleriController::class, 'delete']);
+Route::get('/', function () {
+    return view('welcome');
+})->middleware('guest');
+
+Route::get('/dashboard', function () {
+    return view('layouts.master');
+});
+Route::get('profil', Profile::class)->middleware('auth');
+Route::get('layanan', Layan::class)->middleware('auth');
+Route::get('konsultasi', Konsul::class)->middleware('auth');
+Route::get('galeri', Galeri::class)->middleware('auth');
+Route::get('produk', Produks::class)->middleware('auth');
