@@ -1,9 +1,6 @@
 @section('title', 'Profile')
-<div>
+<div class="col-md-12">
     <div class="card">
-        <div class="card-header mt-3">
-            <h1>Profile</h1>
-        </div>
         @if($isForm)
 
             @include('livewire.profiles.create')
@@ -58,5 +55,4 @@
         @endif
 
     </div>
-
 </div>
