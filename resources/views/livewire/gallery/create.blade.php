@@ -50,10 +50,15 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-datatable btn-icon btn-transparent-dark" wire:click="back()">
+                        <button class="btn btn-datatable btn-round btn-icon btn-transparent-dark" wire:click="back()">
                             <i class="fas fa-arrow-alt-circle-left"></i>
                         </button>
-                        <button type="submit" class="btn btn-info">Simpan</button>
+                        <button type="submit" class="btn btn-success">
+                            <span class="btn-label">
+                                <i class="fa fa-check"></i>
+                            </span>
+                            Simpan
+                        </button>
                     </div>
     
             </form>

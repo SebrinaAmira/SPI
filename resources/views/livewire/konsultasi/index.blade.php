@@ -1,6 +1,6 @@
 @section('title', 'Konsultasi')
 <div>
-    <div class="card mt-5">
+    <div class="card">
         <div class="card-header mt-3">
             <h1>Konsultasi</h1>
         </div>

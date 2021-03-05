@@ -28,11 +28,16 @@
                     <textarea class="form-control @error('deskripsi') is-invalid @enderror" wire:model="deskripsi" id="exampleFormControlTextarea1" rows="3">{{ old('deskripsi')}}</textarea>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-datatable btn-icon btn-transparent-dark"
+                    <button class="btn btn-datatable btn-round btn-icon btn-transparent-dark"
                         wire:click="back()">
                         <i class="fas fa-arrow-alt-circle-left"></i>
                     </button>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="submit" class="btn btn-success">
+                        <span class="btn-label">
+                            <i class="fa fa-check"></i>
+                        </span>
+                        Simpan
+                    </button>
                 </div>
             </form>
         </div>

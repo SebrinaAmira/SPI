@@ -39,7 +39,12 @@
                     <textarea class="form-control @error('deskripsi_konten') is-invalid @enderror" wire:model="deskripsi_konten" id="exampleFormControlTextarea1" rows="3">{{ old('deskripsi_konten')}}</textarea>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-info">Simpan</button>
+                    <button type="submit" class="btn btn-success">
+                        <span class="btn-label">
+                            <i class="fa fa-check"></i>
+                        </span>
+                        Simpan
+                    </button>
                 </div>
             </form>
         </div>
