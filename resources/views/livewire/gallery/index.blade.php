@@ -1,15 +1,14 @@
 @section('title', 'Data')
+<div>
     <div class="card mt-5">
         <div class="card-header mt-3">
             <h1>Gallery</h1>
-
-            @if ($isFrom)
-
-                @include('livewire.gallery.create')
-
-            @endif
-
         </div>
+        @if ($isFrom)
+
+            @include('livewire.gallery.create')
+
+        @endif
 
         @if ($isFrom == false)
 
@@ -77,3 +76,4 @@
 
         @endif
     </div>
+</div>

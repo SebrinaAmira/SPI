@@ -28,7 +28,49 @@ class Index extends Component
 
     public function create() 
     {
-        $this->openForm();
+        $this->isForm = true;
+    }
+    
+    public function render()
+    {
+        $lynan = Layanan::all();
+
+        return view('livewire.layanan.index', ['lynan'=>$lynan])
+        ->extends('layouts.master');
+    }
+    
+    public function edit($id)
+    {
+        // return $id;
+        $lynan = Layanan::find($id);
+        $this->layanan_id = $id;
+        $this->judul = $lynan->judul;
+        $this->gambarlama = $lynan->gambar;
+        $this->deskripsi = $lynan->deskripsi;
+        $this->status = $lynan->status;
+        $this->layanan_id = $lynan->id;
+
+        $this->isForm = true;
+    }
+
+    public function delete($id)
+    {
+        $lynan = Layanan::where('id',$id)->first();
+        $this->judul = $lynan->judul;
+
+        if($id){
+            $lynan = Layanan::find($id);
+            if ($lynan->gambar <> "") {
+                unlink(public_path('storage/photos/') . '/' . $lynan->gambar);
+            }
+            
+            $lynan->delete();
+        }
+    }
+    
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
     }
 
     public function store()
@@ -45,7 +87,7 @@ class Index extends Component
                     'deskripsi' => 'required',
                     'status' => 'required',
                 ]);
-                $data['updated_by'] = Auth::user()->id;
+                $lyn['updated_by'] = Auth::user()->id;
                 $lyn['gambar'] = $this->gambarlama;
             }
 
@@ -59,6 +101,8 @@ class Index extends Component
             $lyn = $this->validate();
             $lyn['gambar'] = md5($this->gambar . microtime()) . '.' . $this->gambar->extension();
             $this->gambar->storeAs('photos', $lyn['gambar']);
+            $lyn['created_by'] = Auth::user()->id;
+            $lyn['updated_by'] = Auth::user()->id;
 
             Layanan::create($lyn);
         }
@@ -67,55 +111,4 @@ class Index extends Component
         $this->isFrom = false;
     }
 
-    public function edit($id)
-    {
-        // return $id;
-        $lynan = Layanan::find($id);
-        $this->layanan_id = $id;
-        $this->judul = $lynan->judul;
-        $this->gambarlama = $lynan->gambar;
-        $this->deskripsi = $lynan->deskripsi;
-        $this->status = $lynan->status;
-        $this->layanan_id = $lynan->id;
-
-        $this->openForm();
-    }
-
-    public function delete($id)
-    {
-        $lynan = Layanan::where('id',$id)->first();
-        $this->judul = $lynan->judul;
-
-        if($id){
-            $lynan = Layanan::find($id);
-            if ($lynan->gambar <> "") {
-                unlink(public_path('storage/photos/') . '/' . $lynan->gambar);
-            }
-
-            $lynan->delete();
-        }
-    }
-
-    public function openForm()
-    {
-        $this->isForm = true;
-    }
-
-    public function closeForm()
-    {
-        $this->isForm = false;
-    }
-
-    public function updated($propertyName)
-    {
-        $this->validateOnly($propertyName);
-    }
-
-    public function render()
-    {
-        $lynan = Layanan::all();
-
-        return view('livewire.layanan.index', ['lynan'=>$lynan])
-            ->extends('layouts.master');
-    }
 }
