@@ -48,7 +48,15 @@
 						</div>
 					</div>
 				</div>
-				@yield('content')
+				<div class="page-inner mt--5">
+					<div class="row mt--2">
+						<div class="col">
+							<div class="card full-height">
+								@yield('content')
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			@include('layouts.footer')
         </div>
