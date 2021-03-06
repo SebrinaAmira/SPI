@@ -48,6 +48,8 @@ class Index extends Component
             'created_by' => Auth::user()->id,
             'updated_by' => Auth::user()->id,
         ]);
+
+        session()->flash('message', 'Data Berhasil Ditambah.');
         
         $this->reset();
         $this->closeForm();
@@ -75,6 +77,9 @@ class Index extends Component
         if($id){
             Konsultasi::where('id',$id)->delete();
         }
+
+        session()->flash('pesan', 'Data Berhasil Dihapus.');
+
     }
 
     public function openForm()

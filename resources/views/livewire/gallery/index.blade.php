@@ -9,6 +9,24 @@
             </button>
         </div>
     </div>
+    <div>
+        @if (session()->has('message'))
+            <div class="alert alert-success" role="alert">
+                {{ session('message') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
+        @if (session()->has('pesan'))
+            <div class="alert alert-danger" role="alert">
+                {{ session('pesan') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
+    </div>
     @if ($isFrom)
 
         @include('livewire.gallery.create')

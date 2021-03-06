@@ -26,7 +26,12 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Telepon</label>
-                    <input type="text" class="form-control @error('telepon') is-invalid @enderror" wire:model="telepon" id="exampleFormControlInput1" value="{{ old('telepon')}}">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">+62</span>
+                        </div>
+                        <input type="text" class="form-control  @error('telepon') is-invalid @enderror" wire:model="telepon" aria-label="Username" aria-describedby="basic-addon1" value="{{ old('telepon')}}">
+                    </div>
                     @error('telepon')
                     <div class="text-danger">
                         <span class="error">{{ $message }}</span>

@@ -43,7 +43,7 @@
 					<div class="page-inner py-5">
 						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
 							<div>
-								<h2 class="text-white pb-2 fw-bold">@yield('title')</h2>
+								<h1 class="text-white pb-2 fw-bold">@yield('title')</h1>
 							</div>
 						</div>
 					</div>

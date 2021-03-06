@@ -39,7 +39,7 @@
                 </div>
                 <ul class="nav nav-primary">
                     <li class="nav-item active">
-                        <li class="nav-item active">
+                        <li class="nav-item">
 							<a href="/dashboard">
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>

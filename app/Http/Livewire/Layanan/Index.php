@@ -66,6 +66,7 @@ class Index extends Component
             
             $lynan->delete();
         }
+        session()->flash('pesan', 'Data Berhasil Dihapus.');
     }
     
     public function updated($propertyName)
@@ -107,6 +108,8 @@ class Index extends Component
             Layanan::create($lyn);
         }
 
+        session()->flash('message', 'Data Berhasil Ditambah.');
+        
         $this->reset();
         $this->isFrom = false;
     }

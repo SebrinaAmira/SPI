@@ -68,6 +68,8 @@ class Index extends Component
                 Produk::create($produks);
             }
 
+        session()->flash('message', 'Data Berhasil Ditambah.');
+
         $this->reset();
         $this->isFrom = false;
     }
@@ -100,6 +102,7 @@ class Index extends Component
 
             $produks->delete();
         }
+        session()->flash('pesan', 'Data Berhasil Dihapus.');
     }
 
     public function openForm()

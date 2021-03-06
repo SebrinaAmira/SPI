@@ -62,6 +62,9 @@ class Index extends Component
                 'created_by' => Auth::user()->id,
                 'updated_by' => Auth::user()->id,
             ]);
+
+            redirect()->to('/profil');
+            
         } else {
             // return 'tambah';
             Profil::create([
@@ -73,8 +76,12 @@ class Index extends Component
                 'status' => $this->status,
                 'created_by' => Auth::user()->id,
                 'updated_by' => Auth::user()->id,
-            ]);
-        }
+                ]);
+            }
+            
+        redirect()->to('/profil');
+
+        session()->flash('message', 'Data Berhasil Diubah.');
 
         $this->closeForm();
 
