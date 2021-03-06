@@ -39,20 +39,12 @@
                 </div>
                 <ul class="nav nav-primary">
                     <li class="nav-item active">
-                        <a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
-                            <i class="fas fa-home"></i>
+                        <li class="nav-item active">
+							<a href="/dashboard">
+								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
-								<span class="caret"></span>
 							</a>
-							<div class="collapse" id="dashboard">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="/dashboard">
-											<span class="sub-item">Dashboard</span>
-										</a>
-									</li>
-                                </ul>
-                        </a>
+						</li>
                     </li>
                     <li class="nav-section">
                         <span class="sidebar-mini-icon">
@@ -61,76 +53,36 @@
                         <h4 class="text-section">Components</h4>
                     </li>
                     <li class="nav-item">
-                        <a data-toggle="collapse" href="#profil">
-                            <i class="fas fa-pen-square"></i>
-                            <p>Profile</p>
-                            <span class="caret"></span>
-                        </a>
-                        <div class="collapse" id="profil">
-                            <ul class="nav nav-collapse">
-                                <li>
-                                    <a href="/profil">
-                                        <span class="sub-item">Profile</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>              
-                        <a data-toggle="collapse" href="#galeri">
-                            <i class="fas fa-th-list"></i>
-                            <p>Gallery</p>
-                            <span class="caret"></span>
-                        </a>
-                        <div class="collapse" id="galeri">
-                            <ul class="nav nav-collapse">
-                                <li>
-                                    <a href="/galeri">
-                                        <span class="sub-item">Galeri</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>              
-                        <a data-toggle="collapse" href="#layanan">
-                            <i class="fas fa-layer-group"></i>
-                            <p>Layanan</p>
-                            <span class="caret"></span>
-                        </a>
-                        <div class="collapse" id="layanan">
-                            <ul class="nav nav-collapse">
-                                <li>
-                                    <a href="/layanan">
-                                        <span class="sub-item">Layanan</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <a data-toggle="collapse" href="#konsultasi">
-                            <i class="fas fa-table"></i>
-                            <p>Konsultasi</p>
-                            <span class="caret"></span>
-                        </a>
-                        <div class="collapse" id="konsultasi">
-                            <ul class="nav nav-collapse">
-                                <li>
-                                    <a href="/konsultasi">
-                                        <span class="sub-item">Konsultasi</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <a data-toggle="collapse" href="#produk">
-                            <i class="fas fa-desktop"></i>
-                            <p>Produk</p>
-                            <span class="caret"></span>
-                        </a>
-                        <div class="collapse" id="produk">
-                            <ul class="nav nav-collapse">
-                                <li>
-                                    <a href="/produk">
-                                        <span class="sub-item">Produk</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                        <li class="nav-item {{ Request::segment(1) == 'profil' ? 'active' : ''}}">
+							<a href="/profil">
+								<i class="fas fa-pen-square"></i>
+								<p>Profile</p>
+							</a>
+						</li>
+                        <li class="nav-item {{ Request::segment(1) == 'galeri' ? 'active' : ''}}">
+							<a href="/galeri">
+								<i class="fas fa-th-list"></i>
+								<p>Gallery</p>
+							</a>
+						</li>
+                        <li class="nav-item {{ Request::segment(1) == 'layanan' ? 'active' : ''}}">
+							<a href="/layanan">
+								<i class="fas fa-layer-group"></i>
+								<p>Layanan</p>
+							</a>
+						</li>
+                        <li class="nav-item {{ Request::segment(1) == 'konsultasi' ? 'active' : ''}}">
+							<a href="/konsultasi">
+								<i class="fas fa-table"></i>
+								<p>Konsultasi</p>
+							</a>
+						</li>
+                        <li class="nav-item {{ Request::segment(1) == 'produk' ? 'active' : ''}}">
+							<a href="/produk">
+								<i class="fas fa-desktop"></i>
+								<p>Product</p>
+							</a>
+						</li>
                     </li>
                 </ul>
             </div>
