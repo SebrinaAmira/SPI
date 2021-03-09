@@ -13,7 +13,7 @@ class Index extends Component
 
     public $judul, $deskripsi, $gambarlama, $gambar, $status, $layanan_id, $isForm;
     public $statusUpdate = false;
-    public $search = '', $paginate = 5;
+    public $search = '', $paginate;
 
     protected $rules = [
         'judul' => 'required',
@@ -38,7 +38,11 @@ class Index extends Component
 
         return view('livewire.layanan.index', [
             'lynan' => $lynan,
-            'lynan' => Layanan::where('judul', 'like', '%'.$this->search.'%')->paginate($this->paginate),
+            'lynan' => Layanan::where('judul', 'like', '%'.$this->search.'%')
+            ->orWhere('deskripsi', 'like', '%'.$this->search.'%')
+            ->orWhere('gambar', 'like', '%'.$this->search.'%')
+            ->orWhere('status', 'like', '%'.$this->search.'%')
+            ->paginate($this->paginate),
             ])->extends('layouts.master');
     }
     

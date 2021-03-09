@@ -36,6 +36,22 @@
     @if ($isFrom == false)
 
     <div class="card-body">
+        <div class="row">
+            <div class="col">
+                Show Entries 
+                <select wire:model="paginate" name="" id="" class="form-control sm w-auto">
+                    <option value=""></option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+            <div class="col-sm-3">
+                Search <input type="text" wire:model="search" class="form-control sm">
+            </div>
+        </div>
         <div class="table-responsive">
             <table id="add-row" class="display table table-head-bg table-striped table-hover dataTable" role="grid" aria-describedby="add-row_info">
                 <thead>
