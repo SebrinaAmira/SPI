@@ -1,6 +1,18 @@
 @section('title', 'Profile')
 <div class="col-md-12">
     <div class="card">
+        <div class="card-header">
+            <div>
+                @if (session()->has('message'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('message') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
+            </div>
+        </div>
         @if($isForm)
 
             @include('livewire.profiles.create')

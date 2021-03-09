@@ -42,13 +42,21 @@
 				<div class="panel-header bg-primary-gradient">
 					<div class="page-inner py-5">
 						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
-							<div>
-								<h2 class="text-white pb-2 fw-bold">@yield('title')</h2>
+							<div class="mt-12">
+								<h1 class="text-white pb-2 fw-bold">@yield('title')</h1>
 							</div>
 						</div>
 					</div>
 				</div>
-				@yield('content')
+				<div class="page-inner mt--5">
+					<div class="row mt--2">
+						<div class="col">
+							<div class="card full-height">
+								@yield('content')
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			@include('layouts.footer')
         </div>

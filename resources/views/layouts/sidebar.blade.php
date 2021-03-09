@@ -9,7 +9,7 @@
                     <div class="info">
                         <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                             <span>
-                                SPI
+                                {{ Auth::user()->name}}
                                 <span class="user-level">Administrator</span>
                                 <span class="caret"></span>
                             </span>
@@ -39,7 +39,7 @@
                 </div>
                 <ul class="nav nav-primary">
                     <li class="nav-item active">
-                        <li class="nav-item {{ Request::segment(1) == 'dashboard' ? 'active' : ''}}">
+                        <li class="nav-item">
 							<a href="/dashboard">
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>

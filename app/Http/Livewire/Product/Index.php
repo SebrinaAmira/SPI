@@ -12,6 +12,7 @@ class Index extends Component
     use WithFileUploads;
     
     public $judul,  $deskripsi,  $gambar,  $gambarlama,  $status, $harga,  $produk_id,  $isForm;
+    public $search = '', $paginate = 5;
     public $statusUpdate = false;
 
     protected $rules = [
@@ -68,6 +69,8 @@ class Index extends Component
                 Produk::create($produks);
             }
 
+        session()->flash('message', 'Data Berhasil Ditambah.');
+
         $this->reset();
         $this->isFrom = false;
     }
@@ -100,6 +103,9 @@ class Index extends Component
 
             $produks->delete();
         }
+        session()->flash('pesan', 'Data Berhasil Dihapus.');
+
+        redirect('produk');
     }
 
     public function openForm()
@@ -121,7 +127,9 @@ class Index extends Component
     {
         $produks = Produk::all();
 
-        return view('livewire.product.index', ['produks'=>$produks])
-            ->extends('layouts.master');
+        return view('livewire.product.index', [
+            'produks' => $produks,
+            'produks' => Produk::where('judul', 'like', '%'.$this->search.'%')->paginate($this->paginate),
+            ])->extends('layouts.master');
     }
 }

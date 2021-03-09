@@ -73,6 +73,9 @@ class Index extends Component
 
             $data->delete();
         }
+        session()->flash('pesan', 'Data Berhasil Dihapus.');
+
+        redirect('galeri');
     }
 
     public function updated($propertyName)
@@ -113,6 +116,8 @@ class Index extends Component
 
             Galeri::create($data);
         }
+
+        session()->flash('message', 'Data Berhasil Ditambah.');
 
         $this->reset();
         $this->isFrom = false;

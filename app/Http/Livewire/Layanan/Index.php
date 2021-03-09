@@ -13,6 +13,7 @@ class Index extends Component
 
     public $judul, $deskripsi, $gambarlama, $gambar, $status, $layanan_id, $isForm;
     public $statusUpdate = false;
+    public $search = '', $paginate = 5;
 
     protected $rules = [
         'judul' => 'required',
@@ -35,8 +36,10 @@ class Index extends Component
     {
         $lynan = Layanan::all();
 
-        return view('livewire.layanan.index', ['lynan'=>$lynan])
-        ->extends('layouts.master');
+        return view('livewire.layanan.index', [
+            'lynan' => $lynan,
+            'lynan' => Layanan::where('judul', 'like', '%'.$this->search.'%')->paginate($this->paginate),
+            ])->extends('layouts.master');
     }
     
     public function edit($id)
@@ -66,6 +69,9 @@ class Index extends Component
             
             $lynan->delete();
         }
+        session()->flash('pesan', 'Data Berhasil Dihapus.');
+
+        redirect('layanan');
     }
     
     public function updated($propertyName)
@@ -107,6 +113,8 @@ class Index extends Component
             Layanan::create($lyn);
         }
 
+        session()->flash('message', 'Data Berhasil Ditambah.');
+        
         $this->reset();
         $this->isFrom = false;
     }
