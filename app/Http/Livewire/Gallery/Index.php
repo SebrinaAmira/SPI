@@ -6,10 +6,21 @@ use App\Models\Galeri;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
     use WithFileUploads;
+
+    use WithPagination;
+
+    public $search = '';
+
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
+
 
     public $statusUpdate = false;
     public $judul,  $deskripsi,  $gambar,  $gambarlama,  $status,  $galeriId,  $isFrom;
@@ -35,8 +46,10 @@ class Index extends Component
     {
         $gallerys = Galeri::all();
 
-        return view('livewire.gallery.index', ['gallerys' => $gallerys])
-            ->extends('layouts.master');
+        return view('livewire.gallery.index', [
+            'gallerys' => $gallerys,
+            'gallerys' => Galeri::where('judul', 'like', '%'.$this->search.'%')->paginate(10),
+            ])->extends('layouts.master');
     }
 
     public function edit($id)

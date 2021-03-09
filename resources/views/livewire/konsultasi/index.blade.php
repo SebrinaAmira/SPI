@@ -49,7 +49,7 @@
                             <tr>
                                 <th scope="row">{{ $loop->iteration}}</th>
                                 <td>{{ $konsul->nama}}</td>
-                                <td>{{ $konsul->telepon}}</td>
+                                <td> <a href="{{ $konsul->telepon}}">{{ $konsul->telepon}}</a></td>
                                 <td>{{ $konsul->pesan}}</td>
                                 <td>{{ $konsul->status}}</td>
                                 <td>{{ $konsul->alamat}}</td>

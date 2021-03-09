@@ -43,7 +43,7 @@
 <!-- Atlantis JS -->
 <script src="{{url('/')}}/assets/js/atlantis.min.js"></script>
 
-<script >
+{{-- <script >
 	$(document).ready(function() {
 		$('#basic-datatables').DataTable({
 		});
@@ -90,4 +90,4 @@
 
 		});
 	});
-</script>
+</script> --}}
