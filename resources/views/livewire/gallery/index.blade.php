@@ -72,35 +72,31 @@
                                         wire:click="edit({{ $data->id }})">
                                         <i class="fas fa-edit"></i>
                                     </button>
-                                    <button class="btn btn-datatable btn-icon btn-transparent-dark" data-original-title="Hapus" data-toggle="tooltip" title=""
-                                            wire:click="destroy({{ $data->id }})">
-                                            <i class="far fa-trash-alt"></i>
-                                    </button>
+                                    <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-icon btn-transparent-dark mr-2" data-toggle="modal" data-target="#exampleModalCenter">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Yakin Hapus?</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" wire:click="delete({{ $data->id}})">Yakin</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 </div>
                             </td>
                         </tr>
                     @endforeach
-
                 </tbody>
-                @foreach ($gallerys as $data)
-
-                    <div class="modal modal-danger fade" id="delete{{ $data->id }}">
-                        <div class="modal-dialog modal-sm">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title">Yakin Hapus {{ $data->judul }}</h4>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-outline pull-left"
-                                        data-dismiss="modal">No</button>
-                                    <a href="/galeri/delete/{{ $data->id }}" class="btn btn-outline">Yes</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
             </table>
         </div>
 

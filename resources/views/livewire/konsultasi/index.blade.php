@@ -36,8 +36,23 @@
     @if ($isForm == false)  
 
     <div class="card-body">
+        <div class="row">
+            <div class="col">
+                Show Entries 
+                <select wire:model="paginate" name="" id="" class="form-control sm w-auto">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+            <div class="col-sm-3">
+                Search <input type="text" wire:model="search" class="form-control sm">
+            </div>
+        </div>
         <div class="table-responsive">
-            <table id="add-row" class="display table table-head-bg table-striped table-hover dataTable" role="grid" aria-describedby="add-row_info">
+            <table id="" class="display table table-head-bg table-striped table-hover dataTable" role="grid" aria-describedby="add-row_info">
                 <thead>
                     <tr>
                         <th scope="col">No</th>
@@ -75,19 +90,35 @@
                                     wire:click="edit({{ $konsul->id }})">
                                     <i class="fas fa-edit"></i>
                                 </button>
-                                <button class="btn btn-datatable btn-icon btn-transparent-dark" data-original-title="Hapus" data-toggle="tooltip" title=""
-                                        wire:click="delete({{ $konsul->id }})">
-                                        <i class="far fa-trash-alt"></i>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-icon btn-transparent-dark mr-2" data-toggle="modal" data-target="#exampleModalCenter">
+                                    <i class="fas fa-trash-alt"></i>
                                 </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Yakin Hapus?</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" wire:click="delete({{ $konsul->id}})">Yakin</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
+            {{ $knsultasi->links('vendor.livewire.bootstrap') }}
         </div>
     </div>
 
     @endif
-
 </div>

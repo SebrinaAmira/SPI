@@ -3,14 +3,19 @@
 namespace App\Http\Livewire\Konsultasi;
 
 use Livewire\Component;
+use Livewire\WithPagination;
 use App\Models\Konsultasi;
 use Illuminate\Support\Facades\Auth;
 
 class Index extends Component
 {
-    public $nama, $telepon, $alamat, $pesan, $status, $konsultasi_id, $isForm, $created_by, $updated_by;
-    public $statusUpdate = false;
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
 
+    public $nama, $telepon, $alamat, $pesan, $status, $konsultasi_id, $isForm, $created_by, $updated_by, $paginate = 5;
+    public $statusUpdate = false;
+    public $search = '';
+    
     protected $rules = [
         'nama' => 'required',
         'telepon' => 'required',
@@ -18,6 +23,11 @@ class Index extends Component
         'pesan' => 'required',
         'status' => 'required',
     ];
+
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
 
     public function back() 
     {
@@ -80,6 +90,8 @@ class Index extends Component
 
         session()->flash('pesan', 'Data Berhasil Dihapus.');
 
+        redirect('konsultasi');
+
     }
 
     public function openForm()
@@ -101,7 +113,15 @@ class Index extends Component
     {
         $knsultasi = Konsultasi::all();
 
-        return view('livewire.konsultasi.index', ['knsultasi'=>$knsultasi])
-            ->extends('layouts.master');
+        return view('livewire.konsultasi.index', [
+            'knsultasi' => $knsultasi,
+            'knsultasi' => Konsultasi::where('nama', 'like', '%'.$this->search.'%')->paginate($this->paginate),
+            ])->extends('layouts.master');
     }
+
+    public function paginationView()
+    {
+        return 'vendor.livewire.tailwind';
+    }
+
 }
