@@ -36,22 +36,29 @@
     <div class="card-body">
         <div class="row">
             <div class="col">
-                Show Entries 
-                <select wire:model="paginate" name="" id="" class="form-control sm w-auto">
-                    <option value=""></option>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="15">15</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                </select>
+                    <div class="form-group form-inline">
+                        <label for="inlineinput" class="com-sm col-form-label">Show Entries :</label>
+                        <select wire:model="paginate" name="" id="" class="form-control sm w-auto">
+                            <option value=""></option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+                </div>
             </div>
             <div class="col-sm-3">
-                Search <input type="text" wire:model="search" class="form-control sm">
+                <div class="form-group input-icon">
+                    <input type="text" wire:model="search" class="form-control sm" placeholder="Search ...">
+                    <span class="input-icon-addon">
+                        <i class="fa fa-search"></i>
+                    </span>
+                </div>
             </div>
         </div>
         <div class="table-responsive">
-            <table id="add-row" class="display table table-head-bg table-striped table-hover dataTable" role="grid" aria-describedby="add-row_info">
+            <table id="add-row" class="display table table-head-bg table-hover dataTable" role="grid" aria-describedby="add-row_info">
                 <thead>
                     <tr>
                         <th scope="col">No</th>
@@ -62,16 +69,6 @@
                         <th style="width: 5%" scope="col">Action</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Judul</th>
-                        <th>Gambar</th>
-                        <th>Status</th>
-                        <th>Deskripsi</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @foreach($lynan as $lyn)
                         <tr>
