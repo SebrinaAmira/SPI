@@ -12,7 +12,7 @@ class Index extends Component
     use WithFileUploads;
     
     public $judul,  $deskripsi,  $gambar,  $gambarlama,  $status, $harga,  $produk_id,  $isForm;
-    public $search = '', $paginate = 5;
+    public $search = '', $paginate;
     public $statusUpdate = false;
 
     protected $rules = [
@@ -129,7 +129,12 @@ class Index extends Component
 
         return view('livewire.product.index', [
             'produks' => $produks,
-            'produks' => Produk::where('judul', 'like', '%'.$this->search.'%')->paginate($this->paginate),
+            'produks' => Produk::where('judul', 'like', '%'.$this->search.'%')
+            ->orWhere('deskripsi', 'like', '%'.$this->search.'%')
+            ->orWhere('gambar', 'like', '%'.$this->search.'%')
+            ->orWhere('status', 'like', '%'.$this->search.'%')
+            ->orWhere('harga', 'like', '%'.$this->search.'%')
+            ->paginate($this->paginate),
             ])->extends('layouts.master');
     }
 }

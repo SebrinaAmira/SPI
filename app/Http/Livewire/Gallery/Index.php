@@ -11,10 +11,11 @@ use Livewire\WithPagination;
 class Index extends Component
 {
     use WithFileUploads;
-
     use WithPagination;
-
-    public $search = '', $paginate = 5;
+    
+    public $statusUpdate = false;
+    public $judul,  $deskripsi,  $gambar,  $gambarlama,  $status,  $galeriId,  $isFrom;
+    public $search = '', $paginate;
 
     public function updatingSearch()
     {
@@ -22,8 +23,6 @@ class Index extends Component
     }
 
 
-    public $statusUpdate = false;
-    public $judul,  $deskripsi,  $gambar,  $gambarlama,  $status,  $galeriId,  $isFrom;
 
     protected $rules = [
         'judul' => 'required',
@@ -48,8 +47,12 @@ class Index extends Component
 
         return view('livewire.gallery.index', [
             'gallerys' => $gallerys,
-            'gallerys' => Galeri::where('judul', 'like', '%' . $this->search . '%')->paginate($this->paginate),
-        ])->extends('layouts.master');
+            'gallerys' => Galeri::where('judul', 'like', '%'.$this->search.'%')
+            ->orWhere('deskripsi', 'like', '%'.$this->search.'%')
+            ->orWhere('gambar', 'like', '%'.$this->search.'%')
+            ->orWhere('status', 'like', '%'.$this->search.'%')
+            ->paginate($this->paginate),
+            ])->extends('layouts.master');
     }
 
     public function edit($id)
@@ -105,6 +108,7 @@ class Index extends Component
             $galeri->update($data);
 
             $this->isFrom = true;
+            
         } else {
 
             $data = $this->validate();

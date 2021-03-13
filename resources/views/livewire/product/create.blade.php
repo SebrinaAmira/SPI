@@ -15,13 +15,20 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Harga</label>
-                    <input type="text" class="form-control @error('harga') is-invalid @enderror"
-                        wire:model="harga" id="exampleFormControlInput1" value="{{ old('harga') }}">
-                    @error('harga')
-                    <div class="text-danger">
-                        <span class="error">{{ $message }}</span>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Rp.</span>
+                        </div>
+                        <input type="text" class="form-control @error('harga') is-invalid @enderror" aria-label="Amount (to the nearest dollar)" wire:model="harga" value="{{ old('harga') }}">
+                        <div class="input-group-append">
+                            <span class="input-group-text">.00</span>
+                        </div>
+                        @error('harga')
+                        <div class="text-danger">
+                            <span class="error">{{ $message }}</span>
+                        </div>
+                        @enderror
                     </div>
-                    @enderror
                 </div>
             </div>
             <div class="col-md-6">

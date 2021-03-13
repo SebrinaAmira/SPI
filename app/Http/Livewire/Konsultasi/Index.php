@@ -12,7 +12,7 @@ class Index extends Component
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
 
-    public $nama, $telepon, $alamat, $pesan, $status, $konsultasi_id, $isForm, $created_by, $updated_by, $paginate = 5;
+    public $nama, $telepon, $alamat, $pesan, $status, $konsultasi_id, $isForm, $created_by, $updated_by, $paginate;
     public $statusUpdate = false;
     public $search = '';
     
@@ -51,7 +51,7 @@ class Index extends Component
 
         Konsultasi::updateOrCreate(['id' => $this->konsultasi_id], [
             'nama' => $this->nama,
-            'telepon' => 'https://wa.me/c/'.$this->telepon,
+            'telepon' => 'https://wa.me/'.$this->telepon,
             'alamat' => $this->alamat,
             'pesan' => $this->pesan,
             'status' => $this->status,
@@ -115,7 +115,12 @@ class Index extends Component
 
         return view('livewire.konsultasi.index', [
             'knsultasi' => $knsultasi,
-            'knsultasi' => Konsultasi::where('nama', 'like', '%'.$this->search.'%')->paginate($this->paginate),
+            'knsultasi' => Konsultasi::where('nama', 'like', '%'.$this->search.'%')
+            ->orWhere('pesan', 'like', '%'.$this->search.'%')
+            ->orWhere('alamat', 'like', '%'.$this->search.'%')
+            ->orWhere('status', 'like', '%'.$this->search.'%')
+            ->orWhere('telepon', 'like', '%'.$this->search.'%')
+            ->paginate($this->paginate),
             ])->extends('layouts.master');
     }
 
