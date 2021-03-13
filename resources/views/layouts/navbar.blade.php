@@ -3,7 +3,7 @@
     <div class="logo-header" data-background-color="blue">
         
         <a href="#" class="logo">
-            <img src="{{url('/')}}/assets/img/logo.svg" alt="navbar brand" class="navbar-brand">
+            <img src="{{url('/')}}/assets/img/SPI_logo.png" alt="navbar brand" class="navbar-brand" style="width: 150px">
         </a>
         <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">
