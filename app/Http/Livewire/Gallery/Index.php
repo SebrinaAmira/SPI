@@ -14,7 +14,7 @@ class Index extends Component
 
     use WithPagination;
 
-    public $search = '';
+    public $search = '', $paginate = 5;
 
     public function updatingSearch()
     {
@@ -48,8 +48,8 @@ class Index extends Component
 
         return view('livewire.gallery.index', [
             'gallerys' => $gallerys,
-            'gallerys' => Galeri::where('judul', 'like', '%'.$this->search.'%')->paginate(10),
-            ])->extends('layouts.master');
+            'gallerys' => Galeri::where('judul', 'like', '%' . $this->search . '%')->paginate($this->paginate),
+        ])->extends('layouts.master');
     }
 
     public function edit($id)
@@ -105,7 +105,6 @@ class Index extends Component
             $galeri->update($data);
 
             $this->isFrom = true;
-            
         } else {
 
             $data = $this->validate();
