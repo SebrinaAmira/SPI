@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Livewire\Index;
 use App\Http\Livewire\Profiles\Index as Profile;
 use App\Http\Livewire\Layanan\Index as Layan;
 use App\Http\Livewire\Konsultasi\Index as Konsul;
@@ -36,3 +37,5 @@ Route::get('layanan', Layan::class)->middleware('auth');
 Route::get('konsultasi', Konsul::class)->middleware('auth');
 Route::get('galeri', Galeri::class)->middleware('auth');
 Route::get('produk', Produks::class)->middleware('auth');
+
+Route::view('coba', 'index');

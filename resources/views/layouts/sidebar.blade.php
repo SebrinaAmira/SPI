@@ -39,7 +39,7 @@
                 </div>
                 <ul class="nav nav-primary">
                     <li class="nav-item active">
-                        <li class="nav-item">
+                        <li class="nav-item {{ Request::segment(1) == 'dashboard' ? 'active' : ''}}">
 							<a href="/dashboard">
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
@@ -62,7 +62,7 @@
                         <li class="nav-item {{ Request::segment(1) == 'galeri' ? 'active' : ''}}">
 							<a href="/galeri">
 								<i class="fas fa-th-list"></i>
-								<p>Gallery</p>
+								<p>Galeri</p>
 							</a>
 						</li>
                         <li class="nav-item {{ Request::segment(1) == 'layanan' ? 'active' : ''}}">
@@ -80,7 +80,7 @@
                         <li class="nav-item {{ Request::segment(1) == 'produk' ? 'active' : ''}}">
 							<a href="/produk">
 								<i class="fas fa-desktop"></i>
-								<p>Product</p>
+								<p>Produk</p>
 							</a>
 						</li>
                     </li>

@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Admin | @yield('title')</title>
+	<title>SPI Admin | @yield('title')</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="{{ url('/')}}/assets/img/icon.ico" type="image/x-icon"/>
+	<link href="{{ url('/')}}/assets/img/favicon.png" rel="icon" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
 	<script src="{{ url('/')}}/assets/js/plugin/webfont/webfont.min.js"></script>

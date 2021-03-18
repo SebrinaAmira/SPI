@@ -27,11 +27,6 @@
             </div>
         @endif
     </div>
-    @if($isForm)
-    
-        @include('livewire.konsultasi.create')
-
-    @endif
 
     @if ($isForm == false)  
 
