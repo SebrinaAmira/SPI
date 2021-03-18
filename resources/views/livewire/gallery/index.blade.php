@@ -100,7 +100,7 @@
                                                 </button>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-danger" wire:click="delete({{ $data->id}})">Yakin</button>
+                                                <button type="button" class="btn btn-danger" wire:click="destroy({{ $data->id}})">Yakin</button>
                                             </div>
                                         </div>
                                     </div>

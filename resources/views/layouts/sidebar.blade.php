@@ -59,28 +59,28 @@
 								<p>Profile</p>
 							</a>
 						</li>
-                        <li class="nav-item {{ Request::segment(1) == 'galeri' ? 'active' : ''}}">
-							<a href="/galeri">
-								<i class="fas fa-th-list"></i>
-								<p>Galeri</p>
-							</a>
-						</li>
                         <li class="nav-item {{ Request::segment(1) == 'layanan' ? 'active' : ''}}">
 							<a href="/layanan">
 								<i class="fas fa-layer-group"></i>
 								<p>Layanan</p>
 							</a>
 						</li>
+                        <li class="nav-item {{ Request::segment(1) == 'produk' ? 'active' : ''}}">
+                            <a href="/produk">
+                                <i class="fas fa-desktop"></i>
+                                <p>Produk</p>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::segment(1) == 'galeri' ? 'active' : ''}}">
+                            <a href="/galeri">
+                                <i class="fas fa-th-list"></i>
+                                <p>Galeri</p>
+                            </a>
+                        </li>
                         <li class="nav-item {{ Request::segment(1) == 'konsultasi' ? 'active' : ''}}">
 							<a href="/konsultasi">
 								<i class="fas fa-table"></i>
 								<p>Konsultasi</p>
-							</a>
-						</li>
-                        <li class="nav-item {{ Request::segment(1) == 'produk' ? 'active' : ''}}">
-							<a href="/produk">
-								<i class="fas fa-desktop"></i>
-								<p>Produk</p>
 							</a>
 						</li>
                     </li>

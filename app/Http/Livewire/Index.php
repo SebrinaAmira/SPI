@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Galeri;
 use App\Models\Konsultasi;
 use App\Models\Layanan;
@@ -11,6 +12,16 @@ use App\Models\Profiles;
 
 class Index extends Component
 {
+    public $nama, $telepon, $alamat, $pesan, $status, $created_by, $updated_by, $konsultasi_id;
+
+    protected $rules = [
+        'nama' => 'required',
+        'telepon' => 'required',
+        'alamat' => 'required',
+        'pesan' => 'required',
+        'status' => 'required',
+    ];
+
     public function render()
     {
         $knsultasi = Konsultasi::all();
@@ -23,6 +34,30 @@ class Index extends Component
             'gallerys' => $gallerys,
             'lynan' => $lynan,
             'produks' => $produks
-        ]);
+        ])->extends('frontend.master');
     }
+
+    public function store()
+    {
+        $knsultasi = $this->validate([
+            'nama' => 'required',
+            'telepon' => 'required',
+            'alamat' => 'required',
+            'pesan' => 'required',
+            'status' => 'required',
+        ]);
+
+        Konsultasi::create(['id' => $this->konsultasi_id], [
+            'nama' => $this->nama,
+            'telepon' => 'https://wa.me/'.$this->telepon,
+            'alamat' => $this->alamat,
+            'pesan' => $this->pesan,
+            'status' => $this->status,
+            'created_by' => Auth::user()->id,
+            'updated_by' => Auth::user()->id,
+        ]);
+        
+        $this->reset();
+    }
+
 }

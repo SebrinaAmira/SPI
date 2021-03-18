@@ -38,4 +38,4 @@ Route::get('konsultasi', Konsul::class)->middleware('auth');
 Route::get('galeri', Galeri::class)->middleware('auth');
 Route::get('produk', Produks::class)->middleware('auth');
 
-Route::view('coba', 'index');
+Route::get('coba', Index::class);
