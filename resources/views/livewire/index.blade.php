@@ -58,7 +58,7 @@
                         <div class="box" style="border-radius: 20px">
                             <h3 style="color: #07d5c0;">{{ $produk->judul}}</h3>
                             <div class="price"><sup>Rp.</sup>{{ $produk->harga}}<span>,00</span></div>
-                            <img src="{{ url('storage/photos/' . $produk->gambar) }}" class="img-fluid" alt="">
+                            <img src="{{ url('storage/photos/' . $produk->gambar) }}" class="img-fluid" width="200px">
                             <ul>
                                 <li>{{ $produk->deskripsi}}</li>
                             </ul>
@@ -133,42 +133,6 @@
 
                 <div class="row gy-4">
 
-                    <div class="col-lg-6">
-
-                        <div class="row gy-4">
-                            <div class="col-md-6">
-                                <div class="info-box">
-                                    <i class="bi bi-geo-alt"></i>
-                                    <h3>Alamat</h3>
-                                    <p>A108 Adam Street,<br>New York, NY 535022</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-box">
-                                    <i class="bi bi-telephone"></i>
-                                    <h3>Telepon</h3>
-                                    <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-box">
-                                    <i class="bi bi-envelope"></i>
-                                    <h3>Email</h3>
-                                    <p>info@example.com<br>contact@example.com</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-box">
-                                    <i class="bi bi-clock"></i>
-                                    <h3>Buka</h3>
-                                    <p>Senin - Sabtu<br>8:00AM - 05:00PM</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-6">
                         <form wire:submit.prevent="store" class="php-konsul-form">
                             <div class="row gy-4">
 
@@ -231,7 +195,6 @@
                                 
                             </div>
 
-                    </div>
                     </form>
 
                 </div>
