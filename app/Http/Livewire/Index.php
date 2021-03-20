@@ -19,7 +19,6 @@ class Index extends Component
         'telepon' => 'required',
         'alamat' => 'required',
         'pesan' => 'required',
-        'status' => 'required',
     ];
 
     public function render()
@@ -39,26 +38,26 @@ class Index extends Component
 
     public function store()
     {
-        return ('aaaaa');
-        $knsultasi = $this->validate([
+        // return ('aaaaa');
+        $this->validate([
             'nama' => 'required',
             'telepon' => 'required',
             'alamat' => 'required',
             'pesan' => 'required',
-            'status' => 'required',
+            // 'status' => 'required',
         ]);
+        // dd($knsultasi);
 
-        Konsultasi::create(['id' => $this->konsultasi_id], [
+        Konsultasi::create([
             'nama' => $this->nama,
-            'telepon' => 'https://wa.me/'.$this->telepon,
+            'telepon' => 'https://wa.me/' . $this->telepon,
             'alamat' => $this->alamat,
             'pesan' => $this->pesan,
-            'status' => $this->status,
+            'status' => 'Show',
             'created_by' => Auth::user()->id,
             'updated_by' => Auth::user()->id,
         ]);
-        
+
         $this->reset();
     }
-
 }
