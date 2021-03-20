@@ -222,6 +222,12 @@
                                 <div class="col-md-12 text-center">
                                     <button type="submit">Kirim</button>
                                 </div>
+
+                                @if (session()->has('message'))
+                                    <div class="alert alert-success" role="alert">
+                                        {{ session('message') }}
+                                    </div>
+                                @endif
                                 
                             </div>
 
