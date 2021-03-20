@@ -46,12 +46,11 @@ class Index extends Component
             'telepon' => 'required',
             'alamat' => 'required',
             'pesan' => 'required',
-            'status' => 'required',
         ]);
 
         Konsultasi::updateOrCreate(['id' => $this->konsultasi_id], [
             'nama' => $this->nama,
-            'telepon' => 'https://wa.me/'.$this->telepon,
+            'telepon' => $this->telepon,
             'alamat' => $this->alamat,
             'pesan' => $this->pesan,
             'status' => $this->status,

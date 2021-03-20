@@ -100,7 +100,7 @@
                     @foreach ($gallerys as $data)
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                         <div class="portfolio-wrap">
-                            <img src="{{ url('storage/photos/' . $data->gambar) }}" class="img-fluid" alt="">
+                            <img src="{{ url('storage/photos/' . $data->gambar) }}" class="img-fluid" width="356px">
                             <div class="portfolio-info">
                                 <h4>{{ $data->judul }}</h4>
                                 <p>{{ $data->status }}</p>

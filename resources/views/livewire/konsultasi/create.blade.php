@@ -42,8 +42,8 @@
                         <label for="exampleFormControlSelect1">Status</label>
                         <select class="form-control @error('status') is-invalid @enderror" wire:model="status" id="exampleFormControlSelect1">
                             <option value="">Pilih</option>
-                            <option value="Show" {{ old('status') == 'Show' ? 'selected' : ''}}>Show</option>
-                            <option value="Hide" {{ old('status') == 'Pria' ? 'selected' : ''}}>Hide</option>
+                            <option value="Diterima" {{ old('status') == 'Diterima' ? 'selected' : ''}}>Diterima</option>
+                            <option value="Ditolak" {{ old('status') == 'Ditolak' ? 'selected' : ''}}>Ditolak</option>
                         </select>
                         @error('status')
                         <div class="text-danger">

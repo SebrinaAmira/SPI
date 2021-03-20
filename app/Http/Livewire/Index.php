@@ -44,7 +44,6 @@ class Index extends Component
             'telepon' => 'required',
             'alamat' => 'required',
             'pesan' => 'required',
-            // 'status' => 'required',
         ]);
         // dd($knsultasi);
 
@@ -53,7 +52,7 @@ class Index extends Component
             'telepon' => 'https://wa.me/' . $this->telepon,
             'alamat' => $this->alamat,
             'pesan' => $this->pesan,
-            'status' => 'Show',
+            'status' => 'Diproses',
             'created_by' => Auth::user()->id,
             'updated_by' => Auth::user()->id,
         ]);
