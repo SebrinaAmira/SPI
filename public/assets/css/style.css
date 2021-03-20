@@ -167,6 +167,7 @@ section {
   transition: all 0.5s;
   z-index: 997;
   padding: 20px 0;
+  background: #fff transparent;
 }
 
 .header.header-scrolled {
@@ -389,6 +390,7 @@ section {
 }
 
 .navbar-mobile .getstarted {
+  color: beige;
   margin: 15px;
 }
 
@@ -435,14 +437,14 @@ section {
   background: url(../img/hero-bg.svg) top center no-repeat;
   background-position: left;
   background-repeat: no-repeat;
-  background-size: 70%;
+  background-size: 60%;
 }
 
 .hero h1 {
   margin: 0;
   font-size: 48px;
   font-weight: 700;
-  color: #012970;
+  color: white;
 }
 
 .hero h2 {
@@ -457,8 +459,8 @@ section {
   padding: 15px 40px;
   border-radius: 4px;
   transition: 0.5s;
-  color: #fff;
-  background: #4154f1;
+  color: #4154f1;
+  background: beige;
   box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
 }
 
@@ -508,6 +510,7 @@ section {
 @media (max-width: 768px) {
   .hero {
     text-align: center;
+    background-size: cover;
   }
 
   .hero h1 {
@@ -526,38 +529,6 @@ section {
 /*--------------------------------------------------------------
 # Index Page
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Values
---------------------------------------------------------------*/
-.values .box {
-  padding: 30px;
-  box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
-  text-align: center;
-  transition: 0.3s;
-  height: 100%;
-}
-
-.values .box img {
-  padding: 30px 50px;
-  transition: 0.5s;
-  transform: scale(1.1);
-}
-
-.values .box h3 {
-  font-size: 24px;
-  color: #012970;
-  font-weight: 700;
-  margin-bottom: 18px;
-}
-
-.values .box:hover {
-  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
-}
-
-.values .box:hover img {
-  transform: scale(1);
-}
-
 /*--------------------------------------------------------------
 # Produk
 --------------------------------------------------------------*/
@@ -667,7 +638,7 @@ section {
 
 
 /*--------------------------------------------------------------
-# Portfolio
+# Galeri
 --------------------------------------------------------------*/
 .portfolio #portfolio-flters {
   padding: 0;
@@ -840,7 +811,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Portfolio Details
+# Galeri Details
 --------------------------------------------------------------*/
 .portfolio-details {
   padding-top: 40px;
@@ -905,7 +876,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# layanan
+# Layanan
 --------------------------------------------------------------*/
 .layanan {
   background: #fff;

@@ -39,6 +39,7 @@ class Index extends Component
 
     public function store()
     {
+        return ('aaaaa');
         $knsultasi = $this->validate([
             'nama' => 'required',
             'telepon' => 'required',
