@@ -6,7 +6,7 @@
           <div class="container">
     
             <ol>
-              <li><a href="/index">Home</a></li>
+              <li><a href="/">Home</a></li>
               <li>Galeri Details</li>
             </ol>
             <h2>Galeri Details</h2>

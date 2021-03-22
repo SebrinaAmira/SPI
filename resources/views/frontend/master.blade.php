@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -33,10 +32,6 @@
   <!-- ======= Navbar ======= -->
   @include('frontend.navbar')
   <!-- End Navbar -->
-
-  <!-- ======= Hero Section ======= -->
-  @include('frontend.hero')
-  <!-- End Hero -->
 
     @yield('content')
 

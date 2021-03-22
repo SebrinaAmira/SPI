@@ -1,6 +1,29 @@
 <div>
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="hero d-flex align-items-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 d-flex flex-column justify-content-center">
+                <h1 data-aos="fade-up">Sinar Prima Indonesia</h1>
+                <h2 data-aos="fade-up" data-aos-delay="400">{{ $profiless->deskripsi_konten }}</h2>
+                <div data-aos="fade-up" data-aos-delay="600">
+                  <div class="text-center text-lg-start">
+                    <a href="#konsultasi" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                      <span>Konsultasi</span>
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                <img src="{{ url('/')}}/assets/img/hero.svg" class="img-fluid" alt="">
+              </div>
+            </div>
+          </div>
+      </section>
+    <!-- End Hero -->
+    
     <main id="main">
-
         <!-- ======= Layanan Section ======= -->
         <section id="layanan" class="layanan">
 
@@ -137,11 +160,16 @@
 
                         <form wire:submit.prevent="store" class="php-konsul-form">
                             <div class="row gy-4">
+                                @if (session()->has('message'))
+                                    <div class="alert alert-success" role="alert">
+                                        {{ session('message') }}
+                                    </div>
+                                @endif
 
                                 <div class="col-md-6">
                                     <input type="text" class="form-control @error('nama') is-invalid @enderror"
                                         wire:model="nama" id="exampleFormControlInput1" placeholder="Nama" required
-                                        value="{{ old('nama')}}">
+                                        value="{{ old('nama')}}" style="border-radius: 5px">
                                     @error('nama')
                                     <div class="text-danger">
                                         <span class="error">{{ $message }}</span>
@@ -166,7 +194,7 @@
                                 <div class="col-md-12">
                                     <input type="text" class="form-control @error('pesan') is-invalid @enderror"
                                         wire:model="pesan" id="exampleFormControlInput1" placeholder="Pesan" required
-                                        value="{{ old('pesan')}}">
+                                        value="{{ old('pesan')}}" style="border-radius: 5px">
                                     @error('pesan')
                                     <div class="text-danger">
                                         <span class="error">{{ $message }}</span>
@@ -177,7 +205,7 @@
                                 <div class="col-md-12">
                                     <textarea class="form-control @error('alamat') is-invalid @enderror"
                                         wire:model="alamat" id="exampleFormControlTextarea1" placeholder="Alamat"
-                                        required rows="6">{{ old('alamat')}}</textarea>
+                                        required rows="6" style="border-radius: 5px">{{ old('alamat')}}</textarea>
                                     @error('alamat')
                                     <div class="text-danger">
                                         <span class="error">{{ $message }}</span>
@@ -188,12 +216,6 @@
                                 <div class="col-md-12 text-center">
                                     <button type="submit">Kirim</button>
                                 </div>
-
-                                @if (session()->has('message'))
-                                    <div class="alert alert-success" role="alert">
-                                        {{ session('message') }}
-                                    </div>
-                                @endif
                                 
                             </div>
 

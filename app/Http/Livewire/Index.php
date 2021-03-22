@@ -8,7 +8,7 @@ use App\Models\Galeri;
 use App\Models\Konsultasi;
 use App\Models\Layanan;
 use App\Models\Produk;
-use App\Models\Profiles;
+use App\Models\Profil;
 
 class Index extends Component
 {
@@ -23,18 +23,20 @@ class Index extends Component
 
     public function render()
     {
+        $profiless = Profil::orderBy('id', 'ASC')->first();
         $knsultasi = Konsultasi::all();
         $gallerys = Galeri::all();
         $lynan = Layanan::all();
         $produks = Produk::all();
-        // $profiless = Profil::all();
+
+        // dd($profiless);
 
         return view('livewire.index', [
+            'profiless' => $profiless,
             'knsultasi' => $knsultasi,
             'gallerys' => $gallerys,
             'lynan' => $lynan,
-            'produks' => $produks,
-            // 'profiless' => $profiless
+            'produks' => $produks
         ])->extends('frontend.master');
     }
 
@@ -55,9 +57,11 @@ class Index extends Component
             'alamat' => $this->alamat,
             'pesan' => $this->pesan,
             'status' => 'Diproses',
-            'created_by' => Auth::user()->id,
-            'updated_by' => Auth::user()->id,
+            'created_by' => 100,
+            'updated_by' => 100,
         ]);
+
+        session()->flash('message', 'Data Berhasil Dikirim.');
 
         $this->reset();
     }

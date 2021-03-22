@@ -21,8 +21,9 @@ class Detail extends Component
     {
         $gallerys = Galeri::all();
 
-        return view('livewire.detail', ['gallerys' => $gallerys,])
-        ->extends('frontend.main');
+        return view('livewire.detail', [
+            'gallerys' => $gallerys
+        ])->extends('frontend.main');
     }
 
     

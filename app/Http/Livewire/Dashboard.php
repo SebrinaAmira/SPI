@@ -8,7 +8,6 @@ use App\Models\Galeri;
 use App\Models\Konsultasi;
 use App\Models\Layanan;
 use App\Models\Produk;
-use App\Models\Profiles;
 
 class Dashboard extends Component
 {

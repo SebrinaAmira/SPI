@@ -7,12 +7,10 @@
                     <div class="col-xl-8 col-xxl-12">
                         <div class="text-center px-4 mb-4 mb-xl-0 mb-xxl-4">
                             <h1 class="text-primary">Selamat Datang, Admin!</h1>
-                            <p class="text-gray-700 mb-0">It&apos;s time to get started! View new
-                                opportunities now, or continue on your previous work.</p>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-xxl-12 text-center"><img class="img-fluid"
-                            src="{{ url('/')}}/assets/img/features.png" style="max-width: 12rem;" />
+                    <div class="col-xl-1 col-xxl-12 text-center"><img class="img-fluid"
+                            src="{{ url('/')}}/assets/img/features.png" style="max-width: 10rem;" />
                     </div>
                 </div>
             </div>
