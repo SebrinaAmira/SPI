@@ -23,15 +23,11 @@ use App\Http\Livewire\Product\Index as Produks;
 */
 
 Route::get('/', Root::class)->middleware('guest');
-
-// Route::get('index', Index::class);
 Route::get('detail', Detail::class);
 
 Auth::routes();
-
-Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
-
 Route::middleware(['auth'])->group(function () {
+    Route::get('home', Dashboard::class);
     Route::get('dashboard', Dashboard::class);
     Route::get('profil', Profile::class);
     Route::get('layanan', Layan::class);
