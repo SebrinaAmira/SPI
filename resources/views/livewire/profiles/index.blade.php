@@ -45,7 +45,7 @@
                             <select class="form-control @error('status') is-invalid @enderror" wire:model="status" id="exampleFormControlSelect1">
                                 <option value="">Pilih</option>
                                 <option value="Show" {{ old('status') == 'Show' ? 'selected' : ''}}>Show</option>
-                                <option value="Hide" {{ old('status') == 'Pria' ? 'selected' : ''}}>Hide</option>
+                                <option value="Hide" {{ old('status') == 'Hide' ? 'selected' : ''}}>Hide</option>
                             </select>
                         </div>
                     </div>

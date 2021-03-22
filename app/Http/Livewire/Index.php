@@ -27,12 +27,14 @@ class Index extends Component
         $gallerys = Galeri::all();
         $lynan = Layanan::all();
         $produks = Produk::all();
+        // $profiless = Profil::all();
 
         return view('livewire.index', [
             'knsultasi' => $knsultasi,
             'gallerys' => $gallerys,
             'lynan' => $lynan,
-            'produks' => $produks
+            'produks' => $produks,
+            // 'profiless' => $profiless
         ])->extends('frontend.master');
     }
 

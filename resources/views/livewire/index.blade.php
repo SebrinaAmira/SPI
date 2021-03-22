@@ -84,23 +84,25 @@
                     <p>Galeri</p>
                 </header>
 
-                {{-- <div class="row" data-aos="fade-up" data-aos-delay="100">
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
                     <div class="col-lg-12 d-flex justify-content-center">
-                        <ul id="portfolio-flters">
+                        {{-- <ul id="portfolio-flters">
                             <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-app">App</li>
-                            <li data-filter=".filter-card">Card</li>
-                            <li data-filter=".filter-web">Web</li>
-                        </ul>
+                            <li data-filter=".filter-pagar">Pagar</li>
+                            <li data-filter=".filter-kanopi">Kanopi</li>
+                            <li data-filter=".filter-galvalum">Galvalum</li>
+                            <li data-filter=".filter-railling">Railling</li>
+                            <li data-filter=".filter-jasacutting">Jasa Cutting</li>
+                        </ul> --}}
                     </div>
-                </div> --}}
+                </div>
 
                 <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
                     @foreach ($gallerys as $data)
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                         <div class="portfolio-wrap">
-                            <img src="{{ url('storage/photos/' . $data->gambar) }}" class="img-fluid" width="356px">
+                            <img src="{{ url('storage/photos/' . $data->gambar) }}" class="img-fluid" width="356px" height="200px">
                             <div class="portfolio-info">
                                 <h4>{{ $data->judul }}</h4>
                                 <p>{{ $data->status }}</p>
