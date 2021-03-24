@@ -27,11 +27,10 @@
             <div class="col-lg-2 col-6 footer-links">
             <h4>Pelayanan</h4>
             <ul>
-                <li><i class="bi bi-chevron-right"></i> <a href="#">Pagar</a></li>
-                <li><i class="bi bi-chevron-right"></i> <a href="#">Kanopi</a></li>
-                <li><i class="bi bi-chevron-right"></i> <a href="#">Galvalum</a></li>
-                <li><i class="bi bi-chevron-right"></i> <a href="#">Railling</a></li>
-                <li><i class="bi bi-chevron-right"></i> <a href="#">Jasa Cutting</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="#layanan">Pagar</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="#layanan">Kanopi</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="#layanan">Galvalum</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="#layanan">Railling</a></li>
             </ul>
             </div>
 

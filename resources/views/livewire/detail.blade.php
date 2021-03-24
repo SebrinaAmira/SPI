@@ -6,7 +6,7 @@
           <div class="container">
     
             <ol>
-              <li><a href="/">Home</a></li>
+              <li><a href="/">Beranda</a></li>
               <li>Galeri Details</li>
             </ol>
             <h2>Galeri Details</h2>
@@ -20,13 +20,13 @@
           <div class="container">
     
             <div class="row gy-4">
-            @foreach ($gallerys as $data)
+            {{-- @foreach ($gallerys as $data) --}}
               <div class="col-lg-8">
                 <div class="portfolio-details-slider swiper-container">
                   <div class="swiper-wrapper align-items-center">
     
                     <div class="swiper-slide">
-                      <img src="{{ url('storage/photos/' . $data->gambar) }}" class="img-fluid" alt="">
+                      <img src="{{ url('storage/photos/' . $gallerys->gambar) }}" class="img-fluid" alt="">
                     </div>
     
                   </div>
@@ -36,22 +36,22 @@
     
               <div class="col-lg-4">
                 <div class="portfolio-info">
-                  <h3>{{ $data->judul }}</h3>
+                  <h3>{{ $gallerys->judul }}</h3>
                   <ul>
                     <li><strong>Category</strong>: Web design</li>
-                    <li><strong>Status</strong>: {{ $data->status}}</li>
-                    <li><strong>Created By</strong>: {{ $data->created_by}}</li>
-                    <li><strong>Updated By</strong>: {{ $data->updated_by}}</li>
+                    <li><strong>Status</strong>: {{ $gallerys->status}}</li>
+                    <li><strong>Created By</strong>: {{ $gallerys->created_by}}</li>
+                    <li><strong>Updated By</strong>: {{ $gallerys->updated_by}}</li>
                   </ul>
                 </div>
                 <div class="portfolio-description">
                   <h2>Detail Deskripsi Produk</h2>
                   <p>
-                    {{ $data->deskripsi }}
+                    {{ $gallerys->deskripsi }}
                   </p>
                 </div>
               </div>
-            @endforeach
+            {{-- @endforeach --}}
             </div>
     
           </div>

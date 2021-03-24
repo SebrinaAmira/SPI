@@ -50,7 +50,6 @@
                             </div>
                             <div class="member-info">
                                 <h4>{{ $lyn->judul}}</h4>
-                                <span>{{ $lyn->status}}</span>
                                 <p>{{ $lyn->deskripsi}}</p>
                             </div>
                         </div>

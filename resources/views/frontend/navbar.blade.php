@@ -8,7 +8,7 @@
       <!-- .navbar -->
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto" href="/">Home</a></li>
+          <li><a class="nav-link scrollto" href="/">Beranda</a></li>
           <li><a class="nav-link scrollto" href="#layanan">Layanan</a></li>
           <li><a class="nav-link scrollto" href="#produk">Produk</a></li>
           <li><a class="nav-link scrollto" href="#galeri">Galeri</a></li>
