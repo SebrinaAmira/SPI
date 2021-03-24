@@ -10,7 +10,7 @@ class Galeri extends Model
 {
     use HasFactory;
     protected $table = 'galeri';
-    protected $fillable = ['judul', 'deskripsi', 'gambar', 'status', 'created_by', 'updated_by'];
+    protected $guarded = ['id'];
 
     public function allData()
     {

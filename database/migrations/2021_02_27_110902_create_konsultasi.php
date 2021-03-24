@@ -19,9 +19,9 @@ class CreateKonsultasi extends Migration
             $table->string('telepon');
             $table->string('alamat');
             $table->string('pesan');
-            $table->enum('status', ['Show', 'Hide']);
+            $table->enum('status', ['Diproses', 'Diterima', 'Ditolak']);
+            $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by');
-            $table->foreign('updated_by')->references('id')->on('users');
             $table->timestamps();
         });
     }

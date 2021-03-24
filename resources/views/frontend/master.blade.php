@@ -1,13 +1,11 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>SPI | Sinar Prima Indonesia</title>
+  <title>Sinar Prima Indonesia</title>
   <meta content="" name="description">
-
   <meta content="" name="keywords">
 
   <!-- Favicons -->
@@ -24,7 +22,7 @@
   <link href="{{ url('/')}}/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="{{ url('/')}}/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
+  <!-- Main CSS File -->
   <link href="{{ url('/')}}/assets/css/style.css" rel="stylesheet">
   @livewireStyles
 </head>
@@ -34,10 +32,6 @@
   <!-- ======= Navbar ======= -->
   @include('frontend.navbar')
   <!-- End Navbar -->
-
-  <!-- ======= Hero Section ======= -->
-  @include('frontend.hero')
-  <!-- End Hero -->
 
     @yield('content')
 

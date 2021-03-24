@@ -14,7 +14,7 @@ class Index extends Component
     use WithPagination;
     
     public $statusUpdate = false;
-    public $judul,  $deskripsi,  $gambar,  $gambarlama,  $status,  $galeriId,  $isFrom;
+    public $judul,  $deskripsi,  $gambar,  $gambarlama, $status, $klien, $layanan, $tanggal, $galeriId,  $isFrom;
     public $search = '', $paginate;
 
     public function updatingSearch()
@@ -22,12 +22,13 @@ class Index extends Component
         $this->resetPage();
     }
 
-
-
     protected $rules = [
         'judul' => 'required',
         'deskripsi' => 'required',
         'status' => 'required',
+        'tanggal' => 'required',
+        'layanan' => 'required',
+        'klien' => 'required',
         'gambar' => 'required|image|max:1024', // 1MB Max
     ];
 
@@ -51,6 +52,9 @@ class Index extends Component
             ->orWhere('deskripsi', 'like', '%'.$this->search.'%')
             ->orWhere('gambar', 'like', '%'.$this->search.'%')
             ->orWhere('status', 'like', '%'.$this->search.'%')
+            ->orWhere('tanggal', 'like', '%'.$this->search.'%')
+            ->orWhere('layanan', 'like', '%'.$this->search.'%')
+            ->orWhere('klien', 'like', '%'.$this->search.'%')
             ->paginate($this->paginate),
             ])->extends('layouts.master');
     }
@@ -62,7 +66,11 @@ class Index extends Component
         $this->gambarlama = $data->gambar;
         $this->status = $data->status;
         $this->deskripsi = $data->deskripsi;
+        $this->tanggal = $data->tanggal;
+        $this->layanan = $data->layanan;
+        $this->klien = $data->klien;
         $this->galeriId = $data->id;
+
         $this->isFrom = true;
     }
 
@@ -99,6 +107,9 @@ class Index extends Component
                     'judul' => 'required',
                     'deskripsi' => 'required',
                     'status' => 'required',
+                    'tanggal' => 'required',
+                    'layanan' => 'required',
+                    'klien' => 'required',
                 ]);
                 $data['updated_by'] = Auth::user()->id;
                 $data['gambar'] = $this->gambarlama;
@@ -132,5 +143,8 @@ class Index extends Component
         $this->gambar = null;
         $this->status = null;
         $this->deskripsi = null;
+        $this->klien = null;
+        $this->layanan = null;
+        $this->tanggal = null;
     }
 }
