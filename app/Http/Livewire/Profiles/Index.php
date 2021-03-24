@@ -19,6 +19,7 @@ class Index extends Component
         'deskripsi_konten' => 'required',
         'status' => 'required',
     ];
+    
 
     public function render()
     {
@@ -64,7 +65,7 @@ class Index extends Component
             ]);
 
             redirect()->to('/profil');
-            
+
         } else {
             // return 'tambah';
             Profil::create([
@@ -78,7 +79,7 @@ class Index extends Component
                 'updated_by' => Auth::user()->id,
                 ]);
             }
-            
+
         redirect()->to('/profil');
 
         session()->flash('message', 'Data Berhasil Diubah.');

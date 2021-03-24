@@ -197,7 +197,7 @@ section {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -245,7 +245,7 @@ section {
   padding: 8px 20px;
   margin-left: 30px;
   border-radius: 4px;
-  color: #fff;
+  color: #fff !important;
 }
 
 .navbar .getstarted:hover {
@@ -320,7 +320,7 @@ section {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #012970;

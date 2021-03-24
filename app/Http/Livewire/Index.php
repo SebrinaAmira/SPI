@@ -22,6 +22,14 @@ class Index extends Component
         'status' => 'required',
     ];
 
+    public function mount()
+    {
+        $this->nama = '';
+        $this->telepon = '';
+        $this->pesan = '';
+        $this->alamat = '';
+    }
+
     public function render()
     {
         $knsultasi = Konsultasi::all();
@@ -56,7 +64,7 @@ class Index extends Component
             'created_by' => Auth::user()->id,
             'updated_by' => Auth::user()->id,
         ]);
-        
+
         $this->reset();
     }
 
