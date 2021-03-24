@@ -39,7 +39,7 @@
           <!-- .navbar -->
           <nav id="navbar" class="navbar">
             <ul>
-              <li><a class="nav-link scrollto active" href="/">Home</a></li>
+              <li><a class="nav-link scrollto active" href="/">Beranda</a></li>
               <li><a class="nav-link scrollto" href="/#layanan">Layanan</a></li>
               <li><a class="nav-link scrollto" href="/#produk">Produk</a></li>
               <li><a class="nav-link scrollto" href="/#galeri">Galeri</a></li>
@@ -117,7 +117,7 @@
     </footer>
   <!-- End Footer -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="/" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     @include('frontend.script')
     @livewireScripts
