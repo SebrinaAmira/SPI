@@ -897,6 +897,7 @@ section {
 .layanan .member .member-img {
   position: relative;
   overflow: hidden;
+  width: 350px;
   height: 250px;
 }
 

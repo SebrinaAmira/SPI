@@ -67,6 +67,9 @@
                         <th scope="col">Judul</th>
                         <th scope="col">Deskripsi</th>
                         <th scope="col">Gambar</th>
+                        <th scope="col">Klien</th>
+                        <th scope="col">Tanggal</th>
+                        <th scope="col">Layanan</th>
                         <th scope="col">Status</th>
                         <th style="width: 5%" scope="col">Action</th>
                     </tr>
@@ -78,6 +81,9 @@
                             <td>{{ $data->judul }}</td>
                             <td>{{ $data->deskripsi }}</td>
                             <td><img src="{{ url('storage/photos/' . $data->gambar) }}" width="80px" height="80px"></td>
+                            <td>{{ $data->klien }}</td>
+                            <td>{{ $data->tanggal }}</td>
+                            <td>{{ $data->layanan }}</td>
                             <td>{{ $data->status }}</td>
                             <td>
                                 <div class="form-button-action">

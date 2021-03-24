@@ -10,13 +10,6 @@ class Detail extends Component
 {
     public $judul, $deskripsi, $gambar, $gambarlama, $status, $galeriId;
 
-    protected $rules = [
-        'judul' => 'required',
-        'deskripsi' => 'required',
-        'status' => 'required',
-        'gambar' => 'required|image|max:1024', // 1MB Max
-    ];
-
     public function render()
     {
         $gallerys = Galeri::all();
@@ -26,5 +19,4 @@ class Detail extends Component
         ])->extends('frontend.main');
     }
 
-    
 }

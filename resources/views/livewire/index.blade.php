@@ -40,7 +40,7 @@
                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         <div class="member">
                             <div class="member-img">
-                                <img src="{{ url('storage/photos/' . $lyn->gambar) }}" class="img-fluid" width="350px">
+                                <img src="{{ url('storage/photos/' . $lyn->gambar) }}" class="img-fluid">
                                 {{-- <div class="social">
                                     <a href=""><i class="bi bi-twitter"></i></a>
                                     <a href=""><i class="bi bi-facebook"></i></a>
