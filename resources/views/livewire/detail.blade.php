@@ -98,7 +98,7 @@
                   <h4>Konsultasi</h4>
                   <p>{{ $profiless->alamat}} <br> <br>
                       <strong>Telepon:</strong> 0{{ $profiless->telepon}}<br>
-                      {{-- <strong>Email:</strong> {{ Auth::user()->email}}<br> --}}
+                      <strong>Email:</strong> <br>
                   </p>
       
                   </div>

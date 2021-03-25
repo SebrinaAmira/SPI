@@ -114,7 +114,6 @@
                             <li data-filter=".filter-kanopi">Kanopi</li>
                             <li data-filter=".filter-galvalum">Galvalum</li>
                             <li data-filter=".filter-railling">Railling</li>
-                            <li data-filter=".filter-jasacutting">Jasa Cutting</li>
                         </ul> --}}
                     </div>
                 </div>
@@ -124,7 +123,7 @@
                     @foreach ($gallerys as $data)
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                         <div class="portfolio-wrap">
-                            <img src="{{ url('storage/photos/' . $data->gambar) }}" class="img-fluid" width="356px" height="200px">
+                            <img src="{{ url('storage/photos/' . $data->gambar) }}" class="img-fluid">
                             <div class="portfolio-info">
                                 <h4>{{ $data->judul }}</h4>
                                 <p>{{ $data->status }}</p>
@@ -268,7 +267,7 @@
             <h4>Konsultasi</h4>
             <p>{{ $profiless->alamat}} <br> <br>
                 <strong>Telepon:</strong> 0{{ $profiless->telepon}}<br>
-                {{-- <strong>Email:</strong> {{ Auth::user()->email}}<br> --}}
+                <strong>Email:</strong> <br>
             </p>
 
             </div>
