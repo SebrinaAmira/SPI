@@ -38,7 +38,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Telepon</label>
-                            <input type="text" class="form-control @error('telepon') is-invalid @enderror" wire:model="telepon" id="exampleFormControlInput1" value="{{ old('telepon')}}">
+                            <input type="number" min="0" class="form-control @error('telepon') is-invalid @enderror" wire:model="telepon" id="exampleFormControlInput1" value="{{ old('telepon')}}">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Status</label>

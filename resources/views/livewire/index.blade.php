@@ -179,7 +179,7 @@
                                 <div class="col-md-6 ">
                                     <div class="input-group">
                                         <span class="input-group-text" id="basic-addon1">+62</span>
-                                        <input type="text" class="form-control @error('telepon') is-invalid @enderror"
+                                        <input type="number" min="0" class="form-control @error('telepon') is-invalid @enderror"
                                             wire:model="telepon" aria-label="Username" aria-describedby="basic-addon1"
                                             placeholder="Telepon" required value="{{ old('telepon')}}">
                                     </div>
