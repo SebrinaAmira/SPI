@@ -30,7 +30,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">+62</span>
                             </div>
-                            <input type="text" class="form-control  @error('telepon') is-invalid @enderror" wire:model="telepon" aria-label="Username" aria-describedby="basic-addon1" value="{{ old('telepon')}}">
+                            <input type="number" min="0" class="form-control  @error('telepon') is-invalid @enderror" wire:model="telepon" aria-label="Username" aria-describedby="basic-addon1" value="{{ old('telepon')}}">
                         </div>
                         @error('telepon')
                         <div class="text-danger">
