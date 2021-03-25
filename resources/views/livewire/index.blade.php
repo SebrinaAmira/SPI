@@ -201,8 +201,8 @@
                                 </div>
 
                                 <div class="col-md-12">
-                                    <textarea class="form-control @error('alamat') is-invalid @enderror" id="summernote"
-                                        wire:model="alamat" id="exampleFormControlTextarea1" placeholder="Alamat"
+                                    <textarea class="form-control @error('alamat') is-invalid @enderror"
+                                        wire:model="alamat" id="summernote" placeholder="Alamat"
                                         required rows="6" style="border-radius: 5px">{{ old('alamat')}}</textarea>
                                     @error('alamat')
                                     <div class="text-danger">
@@ -282,6 +282,6 @@
         </div>
     </div>
   </footer>
-
+  
 </main>
 </div>

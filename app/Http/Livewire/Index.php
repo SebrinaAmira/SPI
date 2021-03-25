@@ -61,7 +61,7 @@ class Index extends Component
 
         Konsultasi::create([
             'nama' => $this->nama,
-            'telepon' => 'https://wa.me/' . $this->telepon,
+            'telepon' => 'https://wa.me/+62'.$this->telepon,
             'alamat' => $this->alamat,
             'pesan' => $this->pesan,
             'status' => 'Diproses',
@@ -73,4 +73,11 @@ class Index extends Component
 
         $this->reset();
     }
+
+    // public function tampil($id)
+    // {
+    //     $knsultasi = Konsultasi::find($id);
+    //     $this->konsultasi_id = $id;
+    // }
+
 }

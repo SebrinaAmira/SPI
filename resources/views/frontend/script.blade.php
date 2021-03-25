@@ -13,14 +13,15 @@
 <!-- Template Main JS File -->
 <script src="{{ url('/') }}/assets/js/main.js"></script>
 
-<script src="{{ url('/') }}/summernote/dist/summernote.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script>
 
 
         $('.summernote').summernote({
             height: 350, // set editor height
             minHeight: null, // set minimum height of editor
-            maxHeight: null, // set maximum height of editor
+            maxHeight: null,
+            placeholder: 'Deskripsi (Sertakan gambar jika ada)', // set maximum height of editor
             focus: false // set focus to editable area after initializing summernote
         });
 

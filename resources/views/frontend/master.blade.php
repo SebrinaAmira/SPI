@@ -24,8 +24,8 @@
 
 
     {{-- import summernote --}}
-    <link href="{{ url('/')}}/summernote/dist/summernote.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+   <!-- include summernote css/js -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="{{ url('/')}}/assets/css/style.css" rel="stylesheet">
@@ -35,7 +35,28 @@
 <body>
 
   <!-- ======= Navbar ======= -->
-  @include('frontend.navbar')
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="/" class="logo d-flex align-items-center">
+        <img src="{{ url('/')}}/assets/img/logo.png" alt="">
+      </a>
+
+      <!-- .navbar -->
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="/">Beranda</a></li>
+          <li><a class="nav-link scrollto" href="#layanan">Layanan</a></li>
+          <li><a class="nav-link scrollto" href="#produk">Produk</a></li>
+          <li><a class="nav-link scrollto" href="#galeri">Galeri</a></li>
+          <li><a class="getstarted scrollto" href="#konsultasi">Konsultasi</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <!-- .navbar -->
+
+    </div>
+  </header>
   <!-- End Navbar -->
 
     @yield('content')
@@ -44,9 +65,6 @@
 
     @include('frontend.script')
     @livewireScripts
-<<<<<<< HEAD
-    
-=======
     <script>
       $(document).ready(function() {
         $(window).scroll(function() {
@@ -64,7 +82,6 @@
         return false;
       });
     </script>
->>>>>>> a780e414c4d3bccf751b6f6c44c9696598cbc107
 </body>
 
 </html>

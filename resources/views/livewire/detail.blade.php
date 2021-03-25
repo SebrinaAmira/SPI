@@ -77,10 +77,10 @@
                   <h4>Fitur</h4>
                   <ul>
                       <li><i class="bi bi-chevron-right"></i> <a href="/">Home</a></li>
-                      <li><i class="bi bi-chevron-right"></i> <a href="#layanan">Layanan</a></li>
-                      <li><i class="bi bi-chevron-right"></i> <a href="#produk">Produk</a></li>
-                      <li><i class="bi bi-chevron-right"></i> <a href="#galeri">Galeri</a></li>
-                      <li><i class="bi bi-chevron-right"></i> <a href="#konsultasi">Konsultasi</a></li>
+                      <li><i class="bi bi-chevron-right"></i> <a href="/#layanan">Layanan</a></li>
+                      <li><i class="bi bi-chevron-right"></i> <a href="/#produk">Produk</a></li>
+                      <li><i class="bi bi-chevron-right"></i> <a href="/#galeri">Galeri</a></li>
+                      <li><i class="bi bi-chevron-right"></i> <a href="/#konsultasi">Konsultasi</a></li>
                   </ul>
                   </div>
       
