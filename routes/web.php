@@ -25,7 +25,7 @@ use App\Http\Livewire\Product\Index as Produks;
 Route::get('/', Root::class)->middleware('guest');
 Route::get('detail', Detail::class);
 
-Auth::routes();
+Auth::routes(['register'=> false, 'reset'=>false]);
 Route::middleware(['auth'])->group(function () {
     Route::get('home', Dashboard::class);
     Route::get('dashboard', Dashboard::class);
