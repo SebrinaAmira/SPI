@@ -41,7 +41,7 @@
                     <li><strong>Pelayanan</strong>: {{ $data->layanan}}</li>
                     <li><strong>Klien</strong>: {{ $data->klien}}</li>
                     <li><strong>Project Tanggal</strong>: {{$data->tanggal}}</li>
-                    <li><strong>Project URL</strong>: <a href="https://www.facebook.com/sinarprimaindonesia/">Sinar Prima Indonesia</a></li>
+                    <li><strong>Project URL</strong>: <a href="https://facebook.com/{{ $profiless->fb}}">Sinar Prima Indonesia</a></li>
                   </ul>
                 </div>
                 <div class="portfolio-description">
