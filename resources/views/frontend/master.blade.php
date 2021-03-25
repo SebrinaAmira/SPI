@@ -35,14 +35,27 @@
 
     @yield('content')
 
-  <!-- ======= Footer ======= -->
-  @include('frontend.footer')
-  <!-- End Footer -->
-
-    <a href="/" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <button class="back-to-top d-flex align-items-center justify-content-center" id="to-top"><i class="bi bi-arrow-up-short"></i></button>
 
     @include('frontend.script')
     @livewireScripts
+    <script>
+      $(document).ready(function() {
+        $(window).scroll(function() {
+          if ($(this).scrollTop() >20) {
+            $('#to-top').fadeIn();
+          } else {
+            $('#to-top').fadeOut();
+          }
+        });
+      });
+      $('#to-top').click(function() {
+        $("html, body").animate({
+          scrollTop:0
+        }, 1000);
+        return false;
+      });
+    </script>
 </body>
 
 </html>
