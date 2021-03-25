@@ -22,7 +22,7 @@
           </div>
       </section>
     <!-- End Hero -->
-    
+
     <main id="main">
         <!-- ======= Layanan Section ======= -->
         <section id="layanan" class="layanan">
@@ -202,7 +202,7 @@
                                 </div>
 
                                 <div class="col-md-12">
-                                    <textarea class="form-control @error('alamat') is-invalid @enderror"
+                                    <textarea class="form-control @error('alamat') is-invalid @enderror" id="summernote"
                                         wire:model="alamat" id="exampleFormControlTextarea1" placeholder="Alamat"
                                         required rows="6" style="border-radius: 5px">{{ old('alamat')}}</textarea>
                                     @error('alamat')
@@ -215,7 +215,7 @@
                                 <div class="col-md-12 text-center">
                                     <button type="submit">Kirim</button>
                                 </div>
-                                
+
                             </div>
 
                     </form>

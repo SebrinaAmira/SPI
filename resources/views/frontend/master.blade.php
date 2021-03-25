@@ -22,6 +22,11 @@
   <link href="{{ url('/')}}/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="{{ url('/')}}/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
+
+    {{-- import summernote --}}
+    <link href="{{ url('/')}}/summernote/dist/summernote.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+
   <!-- Main CSS File -->
   <link href="{{ url('/')}}/assets/css/style.css" rel="stylesheet">
   @livewireStyles
@@ -43,6 +48,7 @@
 
     @include('frontend.script')
     @livewireScripts
+    
 </body>
 
 </html>
