@@ -84,7 +84,7 @@
                             <ul>
                                 <li>{{ $produk->deskripsi}}</li>
                             </ul>
-                            <a href="detail/produk/{{ $produk->id }}" class="btn-buy">Buy Now</a>
+                            <a href="detail/produk/{{ $produk->id }}" class="btn-buy">Selengkapnya</a>
                         </div>
                     </div>
                     @endforeach
