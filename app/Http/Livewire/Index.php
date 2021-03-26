@@ -74,13 +74,4 @@ class Index extends Component
         $this->reset();
     }
 
-    public function tampil()
-    {
-        // dd("fsdajsdkfaskdhkf");
-        // $gallerys = Galeri::find($this->galeriId);
-        // $this->galeriId = $gallerys->id;
-        // return view('livewire.detail', ['gallerys'=>$gallerys])
-        // ->extends('layouts.main');
-    }
-
 }
