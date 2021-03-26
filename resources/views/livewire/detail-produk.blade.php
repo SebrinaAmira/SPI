@@ -21,7 +21,6 @@
     
             <div class="row gy-4">
               <div class="col-lg-8">
-                <div class="dropdown-divider"></div>
                 <div class="portfolio-details-slider swiper-container">
                   <div class="swiper-wrapper align-items-center">
                       <img src="{{ url('storage/photos/' . $data->gambar) }}" class="img-fluid" alt="">
