@@ -583,7 +583,8 @@ section {
 
 .produk img {
   padding: 30px 40px;
-  height: 190px;
+  width: max-content;
+  height: 200px;
 }
 
 .produk ul {
@@ -697,8 +698,8 @@ section {
 
 .portfolio .portfolio-wrap img {
   transition: 1s;
-  height: 356px;
-  width: 356px;
+  width: max-content;
+  height: 350px;
 }
 
 .portfolio .portfolio-wrap .portfolio-info {

@@ -84,7 +84,7 @@
                             <ul>
                                 <li>{{ $produk->deskripsi}}</li>
                             </ul>
-                            <a href="#" class="btn-buy">Buy Now</a>
+                            <a href="detail/produk/{{ $produk->id }}" class="btn-buy">Buy Now</a>
                         </div>
                     </div>
                     @endforeach
@@ -131,7 +131,7 @@
                                     <a href="{{ url('storage/photos/' . $data->gambar) }}"
                                         data-gallery="portfolioGallery" class="portfokio-lightbox"><i
                                             class="bi bi-plus"></i></a>
-                                    <a href="/detail" title="More Details"><i class="bi bi-link"></i></a>
+                                    <a href="detail/galeri/{{ $data->id }}" title="More Details"><i class="bi bi-link"></i></a>
                                 </div>
                             </div>
                         </div>

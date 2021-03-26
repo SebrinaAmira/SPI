@@ -12,7 +12,7 @@ use App\Models\Profil;
 
 class Index extends Component
 {
-    public $nama, $telepon, $alamat, $pesan, $status, $created_by, $updated_by, $konsultasi_id;
+    public $nama, $telepon, $alamat, $pesan, $status, $created_by, $updated_by, $data, $galeriId;
 
     protected $rules = [
         'nama' => 'required',
@@ -74,10 +74,13 @@ class Index extends Component
         $this->reset();
     }
 
-    // public function tampil($id)
-    // {
-    //     $knsultasi = Konsultasi::find($id);
-    //     $this->konsultasi_id = $id;
-    // }
+    public function tampil()
+    {
+        // dd("fsdajsdkfaskdhkf");
+        // $gallerys = Galeri::find($this->galeriId);
+        // $this->galeriId = $gallerys->id;
+        // return view('livewire.detail', ['gallerys'=>$gallerys])
+        // ->extends('layouts.main');
+    }
 
 }

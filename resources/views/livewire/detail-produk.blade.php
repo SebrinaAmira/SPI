@@ -7,9 +7,9 @@
     
             <ol>
               <li><a href="/">Beranda</a></li>
-              <li>Galeri Details</li>
+              <li>Produk Details</li>
             </ol>
-            <h2>Galeri Details</h2>
+            <h2>Produk Details</h2>
     
           </div>
         </section>
@@ -20,17 +20,12 @@
           <div class="container">
     
             <div class="row gy-4">
-            @foreach ($gallerys as $data)
               <div class="col-lg-8">
+                <div class="dropdown-divider"></div>
                 <div class="portfolio-details-slider swiper-container">
                   <div class="swiper-wrapper align-items-center">
-    
-                    <div class="swiper-slide">
                       <img src="{{ url('storage/photos/' . $data->gambar) }}" class="img-fluid" alt="">
-                    </div>
-    
                   </div>
-                  <div class="swiper-pagination"></div>
                 </div>
               </div>
     
@@ -38,10 +33,9 @@
                 <div class="portfolio-info">
                   <h3>{{ $data->judul }}</h3>
                   <ul>
-                    <li><strong>Pelayanan</strong>: {{ $data->layanan}}</li>
-                    <li><strong>Klien</strong>: {{ $data->klien}}</li>
-                    <li><strong>Project Tanggal</strong>: {{$data->tanggal}}</li>
-                    <li><strong>Project URL</strong>: <a href="https://facebook.com/{{ $profiless->fb}}">Sinar Prima Indonesia</a></li>
+                    <li><strong>Harga</strong>: Rp. {{ $data->harga}},00</li>
+                    <li><strong>Status</strong>: {{$data->status}}</li>
+                    <li><strong>Hubungi</strong>: <a href="https://wa.me/+62{{ $profiless->telepon}}">0{{ $profiless->telepon}}</a></li>
                   </ul>
                 </div>
                 <div class="portfolio-description">
@@ -51,7 +45,6 @@
                   </p>
                 </div>
               </div>
-            @endforeach
             </div>
     
           </div>

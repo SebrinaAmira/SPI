@@ -7,18 +7,21 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Profil;
 use App\Models\Galeri;
 
-class Detail extends Component
+class DetailGaleri extends Component
 {
-    public $judul, $deskripsi, $gambar, $gambarlama, $status, $galeriId;
+    public $judul, $deskripsi, $gambar, $gambarlama, $status, $galeriId, $data;
+    
+    public function mount($id)
+    {
+        $this->data = Galeri::find($id);
+    }
 
     public function render()
     {
         $profiless = Profil::orderBy('id', 'ASC')->first();
-        $gallerys = Galeri::all();
 
-        return view('livewire.detail', [
+        return view('livewire.detail-galeri', [
             'profiless' => $profiless,
-            'gallerys' => $gallerys
         ])->extends('frontend.main');
     }
 
