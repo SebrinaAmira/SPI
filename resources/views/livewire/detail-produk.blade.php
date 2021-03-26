@@ -32,7 +32,7 @@
                 <div class="portfolio-info">
                   <h3>{{ $data->judul }}</h3>
                   <ul>
-                    <li><strong>Harga</strong>: Rp. {{ $data->harga}},00</li>
+                    <li><strong>Harga</strong>: Rp. {{ number_format($data->harga)}},00</li>
                     <li><strong>Status</strong>: {{$data->status}}</li>
                     <li><strong>Hubungi</strong>: <a href="https://wa.me/+62{{ $profiless->telepon}}">0{{ $profiless->telepon}}</a></li>
                   </ul>
@@ -90,7 +90,7 @@
                   <h4>Konsultasi</h4>
                   <p>{{ $profiless->alamat}} <br> <br>
                       <strong>Telepon:</strong> 0{{ $profiless->telepon}}<br>
-                      <strong>Email:</strong> <br>
+                      {{-- <strong>Email:</strong> <br> --}}
                   </p>
       
                   </div>

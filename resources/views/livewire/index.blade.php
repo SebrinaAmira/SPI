@@ -79,7 +79,7 @@
                     <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
                         <div class="box" style="border-radius: 20px">
                             <h3 style="color: #07d5c0;">{{ $produk->judul}}</h3>
-                            <div class="price"><sup>Rp.</sup>{{ $produk->harga}}<span>,00</span></div>
+                            <div class="price"><sup>Rp.</sup>{{ number_format($produk->harga)}}<span>,00</span></div>
                             <img src="{{ url('storage/photos/' . $produk->gambar) }}" class="img-fluid" width="200px">
                             <ul>
                                 <li>{{ $produk->deskripsi}}</li>
@@ -267,7 +267,7 @@
             <h4>Konsultasi</h4>
             <p>{{ $profiless->alamat}} <br> <br>
                 <strong>Telepon:</strong> 0{{ $profiless->telepon}}<br>
-                <strong>Email:</strong> <br>
+                {{-- <strong>Email:</strong> <br> --}}
             </p>
 
             </div>
