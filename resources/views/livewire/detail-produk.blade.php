@@ -68,7 +68,7 @@
                   <div class="col-lg-2 col-6 footer-links">
                   <h4>Fitur</h4>
                   <ul>
-                      <li><i class="bi bi-chevron-right"></i> <a href="/">Home</a></li>
+                      <li><i class="bi bi-chevron-right"></i> <a href="/">Beranda</a></li>
                       <li><i class="bi bi-chevron-right"></i> <a href="/#layanan">Layanan</a></li>
                       <li><i class="bi bi-chevron-right"></i> <a href="/#produk">Produk</a></li>
                       <li><i class="bi bi-chevron-right"></i> <a href="/#galeri">Galeri</a></li>
