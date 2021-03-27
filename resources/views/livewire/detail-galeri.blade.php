@@ -78,12 +78,12 @@
                   </div>
       
                   <div class="col-lg-2 col-6 footer-links">
-                  <h4>Pelayanan</h4>
+                    <a href="/#layanan"><h4>Pelayanan</h4></a>
                   <ul>
-                      <li><i class="bi bi-chevron-right"></i> <a href="/#layanan">Pagar</a></li>
-                      <li><i class="bi bi-chevron-right"></i> <a href="/#layanan">Kanopi</a></li>
-                      <li><i class="bi bi-chevron-right"></i> <a href="/#layanan">Galvalum</a></li>
-                      <li><i class="bi bi-chevron-right"></i> <a href="/#layanan">Railling</a></li>
+                    <li style="color: #fff"><i class="bi bi-chevron-right"></i>Pagar</li>
+                    <li style="color: #fff"><i class="bi bi-chevron-right"></i>Kanopi</li>
+                    <li style="color: #fff"><i class="bi bi-chevron-right"></i>Galvalum</li>
+                    <li style="color: #fff"><i class="bi bi-chevron-right"></i>Railling</li>
                   </ul>
                   </div>
       

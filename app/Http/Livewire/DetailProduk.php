@@ -9,16 +9,26 @@ use App\Models\Produk;
 
 class DetailProduk extends Component
 {
-    public $judul, $deskripsi, $gambar, $gambarlama, $status, $harga, $produk_id, $data;
+    public $judul, $deskripsi, $gambar, $gambarlama, $status, $harga, $produk_id, $data, $cek;
 
     public function mount($id)
     {
-        $this->data = Produk::find($id);
+        $cek = Produk::find($id);
+        // dd($cek);
+
+        if ($cek != null) {
+            $this->data = Produk::find($id);
+        }
     }
 
     public function render()
     {
         $profiless = Profil::orderBy('id', 'ASC')->first();
+
+        if (empty($this->data)) {
+            // return 'kosong';
+            $this->redirect('/notFound');
+        }
 
         return view('livewire.detail-produk', [
             'profiless' => $profiless,

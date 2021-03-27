@@ -19,7 +19,6 @@ class Index extends Component
         'deskripsi_konten' => 'required',
         'status' => 'required',
     ];
-    
 
     public function render()
     {

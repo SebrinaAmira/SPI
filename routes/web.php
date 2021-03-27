@@ -26,6 +26,9 @@ use App\Http\Livewire\Product\Index as Produks;
 Route::get('/', Root::class)->middleware('guest');
 Route::get('detail/galeri/{id}', DetailGaleri::class);
 Route::get('detail/produk/{id}', DetailProduk::class);
+Route::get('/notFound',function () {
+    return view('frontend.page-404');
+});
 
 Auth::routes(['register'=> false, 'reset'=>false]);
 Route::middleware(['auth'])->group(function () {

@@ -239,6 +239,7 @@
                 <a href="https://wa.me/+62{{ $profiless->telepon}}" class="whatsapp" target="_blank"><i class="bi bi-whatsapp"></i></a>
                 <a href="https://facebook.com/{{ $profiless->fb}}" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
                 <a href="https://instagram.com/{{ $profiless->instagram}}" class="instagram" target="_blank"><i class="bi bi-instagram bx bxl-instagram"></i></a>
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
             </div>
             </div>
 
@@ -254,12 +255,12 @@
             </div>
 
             <div class="col-lg-2 col-6 footer-links">
-            <h4>Pelayanan</h4>
+            <a href="#layanan"><h4>Pelayanan</h4></a>
             <ul>
-                <li><i class="bi bi-chevron-right"></i> <a href="#layanan">Pagar</a></li>
-                <li><i class="bi bi-chevron-right"></i> <a href="#layanan">Kanopi</a></li>
-                <li><i class="bi bi-chevron-right"></i> <a href="#layanan">Galvalum</a></li>
-                <li><i class="bi bi-chevron-right"></i> <a href="#layanan">Railling</a></li>
+                <li style="color: #fff"><i class="bi bi-chevron-right"></i>Pagar</li>
+                <li style="color: #fff"><i class="bi bi-chevron-right"></i>Kanopi</li>
+                <li style="color: #fff"><i class="bi bi-chevron-right"></i>Galvalum</li>
+                <li style="color: #fff"><i class="bi bi-chevron-right"></i>Railling</li>
             </ul>
             </div>
 

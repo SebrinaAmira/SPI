@@ -45,7 +45,7 @@
                         <span class="sidebar-mini-icon">
                             <i class="fa fa-ellipsis-h"></i>
                         </span>
-                        <h4 class="text-section">Components</h4>
+                        <h4 class="text-section">Fitur</h4>
                     </li>
                     <li class="nav-item">
                         <li class="nav-item {{ Request::segment(1) == 'profil' ? 'active' : ''}}">
