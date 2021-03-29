@@ -28,7 +28,6 @@ class Index extends Component
         'status' => 'required',
         'tanggal' => 'required',
         'layanan' => 'required',
-        'klien' => 'required',
         'gambar' => 'required|image|max:1024', // 1MB Max
     ];
 
@@ -54,7 +53,6 @@ class Index extends Component
             ->orWhere('status', 'like', '%'.$this->search.'%')
             ->orWhere('tanggal', 'like', '%'.$this->search.'%')
             ->orWhere('layanan', 'like', '%'.$this->search.'%')
-            ->orWhere('klien', 'like', '%'.$this->search.'%')
             ->paginate($this->paginate),
             ])->extends('layouts.master');
     }
@@ -68,7 +66,6 @@ class Index extends Component
         $this->deskripsi = $data->deskripsi;
         $this->tanggal = $data->tanggal;
         $this->layanan = $data->layanan;
-        $this->klien = $data->klien;
         $this->galeriId = $data->id;
 
         $this->isFrom = true;
@@ -143,7 +140,6 @@ class Index extends Component
         $this->gambar = null;
         $this->status = null;
         $this->deskripsi = null;
-        $this->klien = null;
         $this->layanan = null;
         $this->tanggal = null;
     }

@@ -21,6 +21,8 @@
                     </div>
                     @enderror
                 </div>
+            </div>
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Status</label>
                     <select class="form-control @error('status') is-invalid @enderror" wire:model="status" id="exampleFormControlSelect1">

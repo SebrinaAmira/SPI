@@ -4,43 +4,22 @@
         <form wire:submit.prevent="store" enctype="multipart/form-data">
             <input type="hidden" name="" wire:model="galeriId">
             
+            <div class="form-group">
+                <label>Judul</label>
+                <input type="text" wire:model="judul" class="form-control">
+                @error('judul')
+                <div class="text-danger">
+                    <span class="error">{{ $message }}</span>
+                </div>
+                @enderror
+            </div>
             <div class="row">
 
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Judul</label>
-                        <input type="text" wire:model="judul" class="form-control">
-                        @error('judul')
-                        <div class="text-danger">
-                            <span class="error">{{ $message }}</span>
-                        </div>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label>Klien</label>
-                        <input type="text" wire:model="klien" class="form-control">
-                        @error('klien')
-                        <div class="text-danger">
-                            <span class="error">{{ $message }}</span>
-                        </div>
-                        @enderror
-                    </div>
-                    <div class="form-group">
                         <label>Tanggal</label>
                         <input type="text" wire:model="tanggal" class="form-control">
                         @error('tanggal')
-                        <div class="text-danger">
-                            <span class="error">{{ $message }}</span>
-                        </div>
-                        @enderror
-                    </div>
-                </div>
-    
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Gambar</label>
-                        <input type="file" wire:model="gambar" class="form-control">
-                        @error('gambar')
                         <div class="text-danger">
                             <span class="error">{{ $message }}</span>
                         </div>
@@ -54,6 +33,18 @@
                             <option value="Hide" {{old('status') == 'Hide' ? 'selected' : ''}}>Hide</option>
                         </select>
                         @error('status')
+                        <div class="text-danger">
+                            <span class="error">{{ $message }}</span>
+                        </div>
+                        @enderror
+                    </div>
+                </div>
+    
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Gambar</label>
+                        <input type="file" wire:model="gambar" class="form-control">
+                        @error('gambar')
                         <div class="text-danger">
                             <span class="error">{{ $message }}</span>
                         </div>

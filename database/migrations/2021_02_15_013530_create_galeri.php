@@ -19,7 +19,6 @@ class CreateGaleri extends Migration
             $table->text('deskripsi');
             $table->string('gambar');
             $table->string('tanggal');
-            $table->string('klien');
             $table->enum('layanan', ['Pagar','Kanopi','Galvalum','Railling']);
             $table->enum('status',['Show','Hide']);
             $table->unsignedBigInteger('created_by');

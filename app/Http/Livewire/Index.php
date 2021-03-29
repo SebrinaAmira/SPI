@@ -16,7 +16,7 @@ class Index extends Component
 
     protected $rules = [
         'nama' => 'required',
-        'telepon' => 'required|max:12|min:12',
+        'telepon' => 'required|min:11|max:12',
         'alamat' => 'required',
         'pesan' => 'required',
     ];
@@ -53,7 +53,7 @@ class Index extends Component
         // return ('aaaaa');
         $this->validate([
             'nama' => 'required',
-            'telepon' => 'required|max:12|min:12',
+            'telepon' => 'required|min:11|max:12',
             'alamat' => 'required',
             'pesan' => 'required',
         ]);
