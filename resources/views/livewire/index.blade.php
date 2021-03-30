@@ -24,6 +24,7 @@
     <!-- End Hero -->
 
     <main id="main">
+
         <!-- ======= Layanan Section ======= -->
         <section id="layanan" class="layanan">
 
@@ -34,26 +35,16 @@
                     <p>Layanan</p>
                 </header>
 
-                <div class="row gy-4">
+                <div class="row">
 
                     @foreach($lynan as $lyn)
-                    <div class="col-md-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                        <div class="member">
-                            <div class="member-img">
-                                <img src="{{ url('storage/photos/' . $lyn->gambar) }}" class="img-fluid">
-                                {{-- <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div> --}}
-                            </div>
-                            <div class="member-info">
-                                <h4>{{ $lyn->judul}}</h4>
-                                <p>{{ $lyn->deskripsi}}</p>
-                            </div>
+                    <div class="col-lg-3">
+                        <div class="box" data-aos="fade-up" data-aos-delay="300">
+                            <img src="{{ url('storage/photos/' . $lyn->gambar) }}" class="img-fluid" alt="">
+                          <h3>{{ $lyn->judul}}</h3>
+                          <p>{{ $lyn->deskripsi}}</p>
                         </div>
-                    </div>
+                      </div>
                     @endforeach
 
                 </div>
