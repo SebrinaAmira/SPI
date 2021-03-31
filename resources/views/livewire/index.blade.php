@@ -258,7 +258,7 @@
             <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
             <h4>Konsultasi</h4>
             <p>{{ $profiless->alamat}} <br> <br>
-                <strong>Telepon:</strong> 0{{ $profiless->telepon}}<br>
+                <strong>Telepon:</strong><a href="https://wa.me/+62{{ $profiless->telepon}}" style="color:#fff" class="whatsapp" target="_blank"> 0{{ $profiless->telepon}}</a><br>
                 {{-- <strong>Email:</strong> <br> --}}
             </p>
 
