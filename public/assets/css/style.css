@@ -167,7 +167,7 @@ section {
   transition: all 0.5s;
   z-index: 997;
   padding: 20px 0;
-  background: #fff transparent;
+  background: #fff;
 }
 
 .header.header-scrolled {
@@ -202,6 +202,7 @@ section {
 */
 .navbar {
   padding: 0;
+  
 }
 
 .navbar ul {
