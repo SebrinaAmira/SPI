@@ -7,6 +7,7 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
 use Livewire\WithPagination;
+use Illuminate\Support\Facades\Storage;
 
 class Index extends Component
 {
@@ -93,29 +94,33 @@ class Index extends Component
 
     public function store()
     {
+        
+        // return $this->galeriId;
         if ($this->galeriId) {
+            // return $this->gambar;
             if ($this->gambar) {
+                // return 'ada gambar';
                 $data = $this->validate();
                 $data['updated_by'] = Auth::user()->id;
                 $data['gambar'] = md5($this->gambar . microtime()) . '.' . $this->gambar->extension();
                 $this->gambar->storeAs('photos', $data['gambar']);
+                Storage::delete($this->gambarlama);
             } else {
+                // return 'gk ada gambar';
                 $data = $this->validate([
                     'judul' => 'required',
                     'deskripsi' => 'required',
                     'status' => 'required',
                     'tanggal' => 'required',
                     'layanan' => 'required',
-                    'klien' => 'required',
                 ]);
-                $data['updated_by'] = Auth::user()->id;
-                $data['gambar'] = $this->gambarlama;
             }
-
+            $data['updated_by'] = Auth::user()->id;
+            // return $data;
             $galeri = Galeri::find($this->galeriId);
             $galeri->update($data);
 
-            $this->isFrom = true;
+            $this->isFrom = false;
             
         } else {
 

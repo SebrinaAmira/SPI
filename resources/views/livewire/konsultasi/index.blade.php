@@ -3,10 +3,10 @@
     <div class="card-header">
         <div class="d-flex align-items-center">
             <h4 class="card-title">Data</h4>
-            <button wire:click="create()" class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
+            {{-- <button wire:click="create()" class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                 <i class="fa fa-plus"></i>
                 Tambah Data
-            </button>
+            </button> --}}
         </div>    
     </div>
     <div>

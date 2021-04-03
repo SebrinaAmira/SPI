@@ -50,7 +50,7 @@ class Index extends Component
 
         Konsultasi::updateOrCreate(['id' => $this->konsultasi_id], [
             'nama' => $this->nama,
-            'telepon' => 'http://wa.me/+62'.$this->telepon,
+            'telepon' => $this->telepon,
             'alamat' => $this->alamat,
             'pesan' => $this->pesan,
             'status' => $this->status,

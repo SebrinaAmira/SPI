@@ -2,17 +2,17 @@
 <div class="card">
     <div class="card-body">
         <form wire:submit.prevent="store">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Nama</label>
+                <input type="text" class="form-control @error('nama') is-invalid @enderror" wire:model="nama" id="exampleFormControlInput1" value="{{ old('nama')}}">
+                @error('nama')
+                <div class="text-danger">
+                    <span class="error">{{ $message }}</span>
+                </div>
+                @enderror
+            </div>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1">Nama</label>
-                        <input type="text" class="form-control @error('nama') is-invalid @enderror" wire:model="nama" id="exampleFormControlInput1" value="{{ old('nama')}}">
-                        @error('nama')
-                        <div class="text-danger">
-                            <span class="error">{{ $message }}</span>
-                        </div>
-                        @enderror
-                    </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Pesan</label>
                         <input type="text" class="form-control @error('pesan') is-invalid @enderror" wire:model="pesan" id="exampleFormControlInput1" value="{{ old('pesan')}}">
@@ -24,20 +24,6 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1">Telepon</label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1">+62</span>
-                            </div>
-                            <input type="number" min="0" class="form-control  @error('telepon') is-invalid @enderror" wire:model="telepon" aria-label="Username" aria-describedby="basic-addon1" value="{{ old('telepon')}}">
-                        </div>
-                        @error('telepon')
-                        <div class="text-danger">
-                            <span class="error">{{ $message }}</span>
-                        </div>
-                        @enderror
-                    </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Status</label>
                         <select class="form-control @error('status') is-invalid @enderror" wire:model="status" id="exampleFormControlSelect1">
