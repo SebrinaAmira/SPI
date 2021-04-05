@@ -18,7 +18,7 @@ class CreateProfil extends Migration
             $table->string('alamat');
             $table->string('fb');
             $table->char('instagram');
-            $table->char('telepon');
+            $table->bigInteger('telepon');
             $table->string('deskripsi_konten');
             $table->enum('status', ['Show', 'Hide']);
             $table->unsignedBigInteger('created_by');

@@ -34,6 +34,7 @@
                   <ul>
                     <li><strong>Pelayanan</strong>: {{ $data->layanan}}</li>
                     <li><strong>Project Tanggal</strong>: {{$data->tanggal}}</li>
+                    <li><strong>Hubungi</strong>: <a href="https://api.whatsapp.com/send?phone=62{{ $profiless->telepon}}&text=%20Hai!%20Saya%20tertarik%20dengan%20project%20dari%20website%20ini">0{{ $profiless->telepon}}</a></li>
                     <li><strong>Link Facebook</strong>: <a href="https://facebook.com/{{ $profiless->fb}}">Sinar Prima Indonesia</a></li>
                   </ul>
                 </div>
@@ -59,7 +60,7 @@
                       <img src="{{ url('/')}}/assets/img/logoo.png" alt="">
                   </a>
                   <div class="social-links mt-3">
-                    <a href="https://wa.me/+62{{ $profiless->telepon}}" class="whatsapp" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=62{{ $profiless->telepon}}&text=%20Hai!%20Saya%20ingin%20berkonsultasi%20lebih%20lanjut" class="whatsapp" target="_blank"><i class="bi bi-whatsapp"></i></a>
                     <a href="https://facebook.com/{{ $profiless->fb}}" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
                     <a href="https://instagram.com/{{ $profiless->instagram}}" class="instagram" target="_blank"><i class="bi bi-instagram bx bxl-instagram"></i></a>
                     <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -90,7 +91,7 @@
                   <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
                   <h4>Konsultasi</h4>
                   <p>{{ $profiless->alamat}} <br> <br>
-                    <strong>Telepon:</strong><a href="https://wa.me/+62{{ $profiless->telepon}}" style="color:#fff" class="whatsapp" target="_blank"> 0{{ $profiless->telepon}}</a><br>
+                    <strong>Telepon:</strong><a href="https://api.whatsapp.com/send?phone=62{{ $profiless->telepon}}&text=%20Hai!%20Saya%20ingin%20berkonsultasi%20lebih%20lanjut" style="color:#fff" class="whatsapp" target="_blank"> 0{{ $profiless->telepon}}</a><br>
                       {{-- <strong>Email:</strong> <br> --}}
                   </p>
       

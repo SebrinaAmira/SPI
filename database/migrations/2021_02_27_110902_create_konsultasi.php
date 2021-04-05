@@ -16,7 +16,7 @@ class CreateKonsultasi extends Migration
         Schema::create('konsultasi', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama');
-            $table->string('telepon');
+            $table->bigInteger('telepon');
             $table->string('alamat');
             $table->string('pesan');
             $table->enum('status', ['Diproses', 'Diterima', 'Ditolak']);

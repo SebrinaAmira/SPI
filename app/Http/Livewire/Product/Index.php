@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Produk;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class Index extends Component
 {
@@ -41,6 +42,7 @@ class Index extends Component
                 $data['updated_by'] = Auth::user()->id;
                 $produks['gambar'] = md5($this->gambar . microtime()) . '.' . $this->gambar->extension();
                 $this->gambar->storeAs('photos', $produks['gambar']);
+                Storage::delete($this->gambarlama);
             } else {
                 $produks = $this->validate([
                     'judul' => 'required',

@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Layanan;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class Index extends Component
 {
@@ -91,6 +92,7 @@ class Index extends Component
                 $data['updated_by'] = Auth::user()->id;
                 $lyn['gambar'] = md5($this->gambar . microtime()) . '.' . $this->gambar->extension();
                 $this->gambar->storeAs('photos', $lyn['gambar']);
+                Storage::delete($this->gambarlama);
             } else {
                 $lyn = $this->validate([
                     'judul' => 'required',

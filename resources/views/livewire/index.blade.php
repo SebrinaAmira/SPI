@@ -230,7 +230,7 @@
                         <img src="{{ url('/')}}/assets/img/logoo.png" alt="">
                     </a>
                     <div class="social-links col-md-12 d-flex justify-content-center">
-                        <a href="https://wa.me/+62{{ $profiless->telepon}}" class="whatsapp" target="_blank"><i
+                        <a href="https://api.whatsapp.com/send?phone=62{{ $profiless->telepon}}&text=%20Hai!%20Saya%20ingin%20berkonsultasi%20lebih%20lanjut" class="whatsapp" target="_blank"><i
                                 class="bi bi-whatsapp"></i></a>
                         <a href="https://facebook.com/{{ $profiless->fb}}" class="facebook" target="_blank"><i
                                 class="bi bi-facebook"></i></a>
@@ -266,7 +266,7 @@
                 <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
                     <h4>Konsultasi</h4>
                     <p>{{ $profiless->alamat}} <br> <br>
-                        <strong>Telepon:</strong><a href="https://wa.me/+62{{ $profiless->telepon}}" style="color:#fff"
+                        <strong>Telepon:</strong><a href="https://api.whatsapp.com/send?phone=62{{ $profiless->telepon}}&text=%20Hai!%20Saya%20ingin%20berkonsultasi%20lebih%20lanjut" style="color:#fff"
                             class="whatsapp" target="_blank"> 0{{ $profiless->telepon}}</a><br>
                         {{-- <strong>Email:</strong> <br> --}}
                     </p>
