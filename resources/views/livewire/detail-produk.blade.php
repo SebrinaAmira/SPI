@@ -107,5 +107,8 @@
           </div>
         </footer>
     
+        <a href="https://api.whatsapp.com/send?phone=62{{ $profiless->telepon}}&text=%20Hai!%20Saya%20ingin%20berkonsultasi%20lebih%20lanjut" class="whatsapp-button d-flex align-items-center justify-content-center"><i class="bi bi-whatsapp"></i></a>
+
       </main>
+
 </div>

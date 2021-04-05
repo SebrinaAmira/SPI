@@ -60,7 +60,7 @@
   <!-- End Navbar -->
 
     @yield('content')
-
+    
     <button class="back-to-top d-flex align-items-center justify-content-center" id="to-top"><i class="bi bi-arrow-up-short"></i></button>
 
     @include('frontend.script')

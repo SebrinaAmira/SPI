@@ -1,3 +1,5 @@
+
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -125,7 +127,7 @@ section {
   position: fixed;
   visibility: hidden;
   opacity: 0;
-  right: 15px;
+  right: 60px;
   bottom: 15px;
   z-index: 99999;
   background: #4154f1;
@@ -147,6 +149,34 @@ section {
 }
 
 .back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.whatsapp-button {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+  background: lime;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.whatsapp-button i {
+  font-size: 24px;
+  color: #fff;
+  line-height: 0;
+}
+
+.whatsapp-button:hover {
+  background: lightgreen;
+  color: #fff;
+}
+
+.whatsapp-button.active {
   visibility: visible;
   opacity: 1;
 }
