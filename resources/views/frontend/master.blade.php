@@ -38,8 +38,8 @@
   <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="/" class="logo d-flex align-items-center">
-        <img src="{{ url('/')}}/assets/img/logo.png" alt="">
+      <a href="/" class="navbar-brand d-flex align-items-center">
+        <img src="{{ url('/')}}/assets/img/logoo.png" alt="">
       </a>
 
       <!-- .navbar -->
@@ -81,6 +81,28 @@
         }, 1000);
         return false;
       });
+
+      $(window).scroll(function(){
+        if($(this).scrollTop()>5){
+            $(".cn-stick-nav").addClass("fixed-top navbar-dark bg-dark nav-bdr");
+        }
+
+        else{
+            $(".cn-stick-nav").removeClass("fixed-top navbar-dark bg-dark nav-bdr");
+        }
+    })
+    //
+$(function(){
+    $(window).scroll(function(){
+        if($(this).scrollTop()>5){
+            $(".navbar-brand img").attr("src","assets/img/logo.png");
+        }
+
+        else{
+            $(".navbar-brand img").attr("src","assets/img/logoo.png");
+        }
+    })
+})
     </script>
 </body>
 
