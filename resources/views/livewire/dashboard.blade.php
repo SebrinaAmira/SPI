@@ -20,52 +20,52 @@
 
 <!-- Example Colored Cards for Dashboard Demo-->
 <div class="row">
-    <div class="col-md-6">
+    <a href="/layanan" style="color: #fff"><div class="col-md-6">
         <div class="card card-dark bg-primary-gradient">
             <div class="card-body pb-0">
                 <div class="h1 fw-bold float-right">{{ $lynan }}</div>
                 <h2 class="mb-2">Layanan</h2>
-                <p><a href="/layanan" class="small stretched-link" style="color: #fff;">Selengkapnya</a></p>
+                <p>Selengkapnya</p>
                 <div class="card-footer d-flex align-items-center justify-content-between" aria-disabled="true">
-                    <a class="nav-link" id="layanan" data-toggle="produk" href="/layanan" role="tab" aria-selected="true"></a>
+                    <a class="nav-link" id="layanan" data-toggle="layanan" href="/layanan" role="tab" aria-selected="true"></a>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-6">
+    </div></a>
+    <a href="/produk" style="color: #fff"><div class="col-md-6">
         <div class="card card-dark bg-secondary-gradient">
-            <div class="card-body pb-0" id="produk" href="/produk">
+            <div class="card-body pb-0">
                 <div class="h1 fw-bold float-right">{{ $produks }}</div>
                 <h2 class="mb-2">Produk</h2>
-                <p><a href="/produk" class="small stretched-link" style="color: #fff;">Selengkapnya</a></p>
+                <p>Selengkapnya</p>
                 <div class="card-footer d-flex align-items-center justify-content-between" aria-disabled="true">
                     <a class="nav-link" id="produk" data-toggle="produk" href="/produk" role="tab" aria-selected="true"></a>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-6">
+    </div></a>
+    <a href="/galeri" style="color: #fff"><div class="col-md-6">
         <div class="card card-dark bg-secondary-gradient">
-            <div class="card-body pb-0" id="produk" href="/produk">
+            <div class="card-body pb-0">
                 <div class="h1 fw-bold float-right">{{ $gallerys }}</div>
                 <h2 class="mb-2">Galeri</h2>
-                <p><a href="/galeri" class="small stretched-link" style="color: #fff;">Selengkapnya</a></p>
+                <p>Selengkapnya</p>
                 <div class="card-footer d-flex align-items-center justify-content-between" aria-disabled="true">
-                    <a class="nav-link" id="produk" data-toggle="produk" href="/produk" role="tab" aria-selected="true"></a>
+                    <a class="nav-link" id="galeri" data-toggle="galeri" href="/galeri" role="tab" aria-selected="true"></a>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-6">
+    </div></a>
+    <a href="/konsultasi" style="color: #fff"><div class="col-md-6">
         <div class="card card-dark bg-primary-gradient">
             <div class="card-body pb-0">
                 <div class="h1 fw-bold float-right">{{ $knsultasi }}</div>
                 <h2 class="mb-2">Konsultasi</h2>
-                <p><a href="/konsultasi" class="small stretched-link" style="color: #fff;">Selengkapnya</a></p>
+                <p>Selengkapnya</p>
                 <div class="card-footer d-flex align-items-center justify-content-between" aria-disabled="true">
-                    <a class="nav-link" id="produk" data-toggle="produk" href="/produk" role="tab" aria-selected="true"></a>
+                    <a class="nav-link" id="konsultasi" data-toggle="konsultasi" href="/konsultasi" role="tab" aria-selected="true"></a>
                 </div>
             </div>
         </div>
-    </div>
+    </div></a>
 </div>
